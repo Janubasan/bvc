@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BVC-OS — Sistema Operacional de Renda com IA</title>
+<link rel="stylesheet" href="/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+</head>
+<body>
+<header class="topo">
+  <div class="marca">
+    <span class="logo">⚡</span>
+    <div>
+      <strong>BVC-OS</strong>
+      <small>Sistema operacional multiagente de renda com IA</small>
+    </div>
+  </div>
+  <div class="topo-direita">
+    <span id="modo-badge" class="badge badge-neutro" title="Determinístico = funciona sem chave. LLM = texto gerado por IA.">carregando…</span>
+    <select id="seletor-projeto" title="Projeto ativo"><option value="">— sem projeto —</option></select>
+  </div>
+</header>
+
+<nav class="abas" id="abas">
+  <button data-aba="comecar" class="ativa">🚀 Começar</button>
+  <button data-aba="painel">📊 Painel</button>
+  <button data-aba="portas">🚪 Portas</button>
+  <button data-aba="unidade">💰 Unidade</button>
+  <button data-aba="ciclo">⚡ Ciclo agêntico</button>
+  <button data-aba="agentes">🤖 Agentes</button>
+  <button data-aba="artefatos">📄 Artefatos</button>
+  <button data-aba="como">📚 Como funciona</button>
+</nav>
+
+<main>
+  <!-- COMEÇAR -->
+  <section id="aba-comecar" class="aba ativa">
+    <div class="ajuda">
+      <h3>O que é isto</h3>
+      <p>Um sistema multiagente que conduz você por <strong>5 percursos de lucro</strong> e <strong>7 portas de decisão</strong>. Ele mede, diagnostica o vazamento, prioriza <em>uma</em> alavanca, delega handoffs aos agentes e cobra execução. Sem inventar número: o que falta aparece como <code>[SEM DADO]</code>.</p>
+      <p class="dica">Comece pelo botão "Criar projeto demo" para ver o ciclo rodando com dados de exemplo, depois crie o seu.</p>
+    </div>
+
+    <div class="grade-2">
+      <div class="cartao">
+        <h2>Criar meu projeto</h2>
+        <form id="form-projeto" class="formulario">
+          <label>Nome do produto<input name="nome" placeholder="Ex.: AgendaBot para clínicas" required /></label>
+          <label>Público específico<input name="publico" placeholder="Ex.: clínicas odontológicas com 2 a 5 cadeiras" required /></label>
+          <label>Dor (com número)<textarea name="dor" rows="2" placeholder="Ex.: recepção perde 1h/dia confirmando consultas e 20% faltam" required></textarea></label>
+          <label>Resultado prometido<input name="resultado" placeholder="Ex.: reduzir faltas em 40% em 14 dias" /></label>
+          <div class="linha">
+            <label>Setup<input name="preco_setup" placeholder="R$ 1.500" /></label>
+            <label>Mensalidade<input name="preco_mensal" placeholder="R$ 297" /></label>
+          </div>
+          <label>Canal principal<input name="canal" placeholder="Ex.: WhatsApp de grupos + Instagram" /></label>
+          <label>Stack<small> (opcional — pode deixar em branco)</small><input name="stack" placeholder="Ex.: Supabase + Next.js + LLM" /></label>
+          <button class="botao primario" type="submit">Criar projeto e gerar artefatos</button>
+        </form>
+      </div>
+
+      <div class="cartao">
+        <h2>Começar rápido</h2>
+        <p>Gera um projeto completo com dados de exemplo e artefatos preenchidos (PRD, oferta, landing, preço, checklist).</p>
+        <button class="botao" id="btn-demo">Criar projeto demo</button>
+        <hr />
+        <h3>Ordem recomendada</h3>
+        <ol class="passos">
+          <li><strong>Validar (G0):</strong> 15 conversas, 5 com gasto declarado.</li>
+          <li><strong>Sinal de dinheiro (G1):</strong> 3 pagos ou pré-pagos.</li>
+          <li><strong>Entregar (G2):</strong> 1 resultado medido antes/depois.</li>
+          <li><strong>Recorrência (G3):</strong> 3 mensalidades + 1 renovação.</li>
+          <li><strong>Canal (G4) e Margem (G5):</strong> 10 clientes/canal e custo de IA &lt; 30%.</li>
+        </ol>
+        <p class="dica">Nada avança sem evidência. É isso que impede você de construir no vazio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINEL -->
+  <section id="aba-painel" class="aba">
+    <div class="ajuda">
+      <h3>Painel do negócio</h3>
+      <p>O estado é a memória do sistema: o que você registra aqui é o que os agentes usam para decidir. Preencha <strong>números reais</strong>; deixe vazio o que ainda não mediu.</p>
+    </div>
+    <div id="painel-conteudo" class="vazio">Selecione ou crie um projeto.</div>
+  </section>
+
+  <!-- PORTAS -->
+  <section id="aba-portas" class="aba">
+    <div class="ajuda">
+      <h3>Portas de decisão (G0–G6)</h3>
+      <p>Cada porta é um <strong>guardrail</strong>: bloqueia o avanço até existir evidência. Aprovar exige registrar a evidência (data + fonte + número).</p>
+    </div>
+    <div id="portas-conteudo" class="vazio">Selecione um projeto.</div>
+  </section>
+
+  <!-- UNIDADE -->
+  <section id="aba-unidade" class="aba">
+    <div class="ajuda">
+      <h3>Unidade econômica</h3>
+      <p>Ticket, CAC, LTV, LTV/CAC, payback, margem, custo de IA por cliente e runway. Sem estes números, decisão vira palpite.</p>
+    </div>
+    <div class="cartao">
+      <div class="linha">
+        <label>Horas no período<input id="u-horas" type="number" min="0" step="0.5" placeholder="ex.: 40" /></label>
+        <label>Valor da sua hora (R$)<input id="u-valor" type="number" min="0" step="10" placeholder="50" /></label>
+        <label>Ferramentas/ads (R$)<input id="u-ferramentas" type="number" min="0" step="10" placeholder="200" /></label>
+        <label>Caixa (R$)<input id="u-caixa" type="number" min="0" step="100" placeholder="6000" /></label>
+        <label>Custo fixo mensal (R$)<input id="u-fixo" type="number" min="0" step="50" placeholder="900" /></label>
+      </div>
+      <button class="botao primario" id="btn-unidade">Calcular</button>
+    </div>
+    <div id="unidade-conteudo" class="vazio">Selecione um projeto.</div>
+  </section>
+
+  <!-- CICLO -->
+  <section id="aba-ciclo" class="aba">
+    <div class="ajuda">
+      <h3>Ciclo agêntico</h3>
+      <p>O orquestrador planeja, os agentes <em>chamam ferramentas</em> (portas, unidade, RAG na bíblia, templates, estado), a saída passa por <strong>autocrítica (Reflexion)</strong> e <strong>guardrails</strong>, e o que é crítico vai para <strong>aprovação humana (HITL)</strong>. Tudo em português, sem inventar dado.</p>
+    </div>
+    <div class="cartao">
+      <div class="chips" id="chips-comandos"></div>
+      <div class="linha">
+        <input id="entrada-comando" placeholder="Digite um comando: /semana, /porteiro G0, /preencher oferta, /canal reddit…" />
+        <button class="botao primario" id="btn-executar">Executar</button>
+      </div>
+      <label class="caixa-check"><input type="checkbox" id="usar-ia" checked /> usar LLM quando configurado (se não houver chave, roda determinístico)</label>
+    </div>
+    <div id="ciclo-conteudo" class="vazio">Selecione um projeto e execute um comando.</div>
+  </section>
+
+  <!-- AGENTES -->
+  <section id="aba-agentes" class="aba">
+    <div class="ajuda">
+      <h3>Registro de agentes</h3>
+      <p>Arquitetura em camadas: <strong>L0</strong> orquestrador · <strong>L1</strong> domínio (VALIDA, OFERTA, CANAL, ENTREGA, CAIXA) · <strong>L2</strong> especialistas · <strong>L4</strong> guardrails. Copie qualquer prompt e cole no seu modelo — ou rode tudo por aqui.</p>
+    </div>
+    <div id="agentes-conteudo">Carregando…</div>
+  </section>
+
+  <!-- ARTEFATOS -->
+  <section id="aba-artefatos" class="aba">
+    <div class="ajuda">
+      <h3>Artefatos gerados</h3>
+      <p>Tudo que o sistema produz fica salvo no projeto: PRD, oferta, landing, preço, proposta, lançamentos, cold e-mail, prompts e checklist. Copie, edite e use.</p>
+    </div>
+    <div class="cartao">
+      <div class="linha">
+        <select id="seletor-artefato"></select>
+        <button class="botao" id="btn-gerar-artefato">Gerar / atualizar</button>
+        <button class="botao" id="btn-baixar-artefato">Baixar .md</button>
+      </div>
+    </div>
+    <div id="artefato-conteudo" class="vazio">Selecione um projeto.</div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="aba-como" class="aba">
+    <div class="ajuda">
+      <h3>Como o sistema funciona (didático)</h3>
+      <p>Seis padrões agênticos modernos, aplicados de verdade — não é o n8n, é código com contrato entre camadas.</p>
+    </div>
+    <div id="padroes-conteudo" class="grade-3">Carregando…</div>
+    <div class="cartao">
+      <h2>Ligar o LLM (opcional)</h2>
+      <p>Sem chave, o sistema funciona 100% determinístico: calcula portas, unidade, gera artefatos e monta os handoffs. Com chave, os agentes também <em>escrevem</em> as peças (posts, propostas, planos) usando o Prompt Master + o estado real.</p>
+      <pre class="codigo">export BVC_LLM_API_KEY="sua-chave"        # compatível com OpenAI
+export BVC_LLM_BASE_URL="https://api.openai.com/v1"   # qualquer endpoint compatível
+export BVC_LLM_MODEL="gpt-4.1-mini"       # modelo mais barato que resolve
+node app/server.mjs                        # reinicie o servidor</pre>
+      <p class="dica">A chave fica só no servidor. O navegador nunca vê a chave — a SPA chama <code>/api/…</code> por URL relativa.</p>
+    </div>
+    <div class="cartao">
+      <h2>Rodar online</h2>
+      <p>Este app é um servidor Node sem dependências. Para publicar: qualquer host que rode Node (Render, Railway, Fly.io, VPS) com <code>node app/server.mjs</code> e a variável <code>PORT</code>. Não há build, não há <code>npm install</code>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  BVC-OS v1.0 · <span id="rodape-info">—</span> · fundamentos em <code>docs/</code> · agentes em <code>prompts/</code>
+</footer>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -10,6 +10,7 @@ Este repositório não é um curso motivacional. É um **sistema operacional de 
 
 | Arquivo | O que resolve |
 |---|---|
+| **[`app/`](app/server.mjs)** | **O BVC-OS rodando: app full stack com motor agêntico próprio, painel, portas, unidade, agentes e artefatos — `node app/server.mjs`** |
 | [`docs/00-COMECE-AQUI.md`](docs/00-COMECE-AQUI.md) | O mapa completo, as regras de ouro e como usar a bíblia hoje |
 | [`docs/01-MODELOS-DE-RENDA.md`](docs/01-MODELOS-DE-RENDA.md) | 12 modelos de renda com IA: custo, margem, tempo até o 1º real, teto e qual escolher pelo seu perfil |
 | [`docs/02-PRODUTO-E-VALIDACAO.md`](docs/02-PRODUTO-E-VALIDACAO.md) | Como achar dor real, validar em 7 dias, escrever o PRD e precificar |
@@ -41,6 +42,10 @@ Este repositório não é um curso motivacional. É um **sistema operacional de 
 ```bash
 git clone https://github.com/Janubasan/bvc.git && cd bvc
 
+# 0) O caminho mais rápido: o app full stack (sem instalar nada)
+node app/server.mjs
+# -> http://localhost:8080 · botão "gerar projeto demo" roda o ciclo agêntico inteiro
+
 # 1) Leia o mapa
 less docs/00-COMECE-AQUI.md
 
@@ -62,6 +67,74 @@ make semana SLUG=<seu-slug>                                        # ciclo compl
 ```
 
 Depois siga `docs/09-ROADMAP-90-DIAS.md` **literalmente**, sem pular para o dia 8 antes de fechar o dia 3.
+
+---
+
+## 🚀 O app BVC-OS (full stack, offline, zero dependências)
+
+Todo o sistema — estado, portas, unidade econômica, agentes, contratos e artefatos — também roda como **aplicação web própria**: motor agêntico em Node puro (sem `npm install`, sem build, sem n8n), interface didática em PT-BR e dados gravados em arquivos JSON que você pode abrir e editar.
+
+```bash
+node app/server.mjs              # abre em http://localhost:8080
+PORT=3000 node app/server.mjs    # outra porta
+BVC_DATA_DIR=~/meus-negocios node app/server.mjs   # outra pasta de dados
+```
+
+**Opcional — ligar um LLM de verdade** (a chave fica só no servidor, nunca no navegador):
+
+```bash
+export BVC_LLM_API_KEY="sua-chave"                 # OpenAI, Groq, OpenRouter, Together…
+export BVC_LLM_BASE_URL="https://api.openai.com/v1" # qualquer endpoint compatível com OpenAI
+export BVC_LLM_MODEL="gpt-4o-mini"
+node app/server.mjs
+```
+
+Sem chave o app roda **100% determinístico**: as mesmas portas, o mesmo diagnóstico e os mesmos artefatos — a única diferença é que os textos vêm das regras do BVC-OS em vez de um modelo. A barra superior mostra o modo ativo (*determinístico* ou *LLM: modelo*).
+
+### As 8 abas da interface
+
+| Aba | O que você faz |
+|---|---|
+| **Começar** | cria um projeto (nome, público, dor, promessa, preço, canal) já com 5–10 artefatos preenchidos; ou gera o **projeto demo** em 1 clique e roda `/semana` |
+| **Painel** | vê e edita os 14 números do negócio (conversas, pagos, MRR, custo de IA, churn…); tudo que o motor decide sai daqui |
+| **Portas** | audita G0–G6, aprova/reprova **com evidência** e vê o que falta em cada porta (a decisão humana fica registrada no estado) |
+| **Unidade** | ticket, CAC, LTV, LTV/CAC, payback, margem, custo de IA por cliente, runway + alertas e ações sugeridas |
+| **Ciclo agêntico** | digita ou clica um comando (`/semana`, `/validar`, `/canal reddit`, `/entrega`, `/caixa`, `/preencher oferta`, `/porteiro G3`…) e recebe a resposta nos **7 blocos** + trace do loop, guardrails L4 e itens de HITL |
+| **Agentes** | L0 orquestrador + 5 agentes L1 + 9 especialistas L2, cada um com prompt copiável; tabela de códigos de guardrail |
+| **Artefatos** | lista, gera e baixa os arquivos do projeto (`oferta.md`, `prd.md`, `preco.md`, `landing.md`, `checklist-30-dias.md`…) |
+| **Como funciona** | explicação curta de cada padrão agêntico usado e por que ele é diferente de um fluxo visual |
+
+### Padrões agênticos implementados (não é n8n)
+
+| Padrão | Onde está no código | O que resolve |
+|---|---|---|
+| **Plan-and-execute** | `app/agents/engine.mjs` → `planejarHandoffs()` | decompõe o objetivo da rodada em 1–3 handoffs com prazo e custo |
+| **ReAct tool-loop** | `app/agents/tools.mjs` + `executarFerramenta()` | o agente decide e **chama ferramentas de verdade** (portas, unidade, RAG, preencher, handoff, estado) |
+| **Reflexion** | `refletir()` em `engine.mjs` | o próprio resultado é criticado antes de sair (critério ausente, artefato vazio, número sem fonte) |
+| **Handoff tipado** | `prompts/04-CONTRATOS-E-PORTAS.md` + `ferramenta_handoff` | todo repasse entre agentes é um arquivo JSON com objetivo, saída, critérios e custo |
+| **Guardrails L4** | `app/core/gates.mjs` + `verificarGuardrails()` | 7 códigos (E-FMT, E-DADO, E-LIC, E-LGPD, E-CUSTO, E-PROMESSA, E-ESCOPO) **reprovam** a resposta antes de você agir |
+| **HITL** | `exigenciasHITL()` | preço, dados de cliente e gasto relevante exigem decisão humana explícita |
+| **RAG local** | `app/core/rag.mjs` | busca por palavra-chave sobre os 15 docs da bíblia + prompts + templates, sem vetor e sem serviço externo |
+| **Cache de contexto** | `app/agents/llm.mjs` | reaproveita respostas do LLM para economizar tokens quando há chave |
+
+### API (para automatizar depois)
+
+| Método | Rota | Para que serve |
+|---|---|---|
+| GET | `/api/health` | versão, modo (determinístico/LLM) e pasta de dados |
+| GET/POST | `/api/projetos` | listar e criar projetos |
+| POST | `/api/demo` | criar o projeto demo com histórico e métricas |
+| GET | `/api/projetos/:slug/estado` | ler o estado completo do negócio |
+| PUT | `/api/projetos/:slug/estado` | atualizar métricas (`{"metricas":{"conversas":19}}`) |
+| GET | `/api/projetos/:slug/gates` | auditoria G0–G6 com o que falta |
+| POST | `/api/projetos/:slug/porta` | registrar decisão humana: `{gate,status,evidencia}` |
+| GET | `/api/projetos/:slug/unidade` | unidade econômica (`?horas=&valorHora=&ferramentas=&caixa=&custoFixo=`) |
+| GET/POST | `/api/projetos/:slug/artefatos` | ler e gerar artefatos a partir dos templates |
+| GET | `/api/projetos/:slug/handoffs` | handoffs tipados gravados em disco |
+| POST | `/api/projetos/:slug/comando` | **executar o ciclo agêntico**: `{"comando":"/semana","opcoes":{"usarIA":true}}` |
+| GET | `/api/agentes` · `/api/templates` · `/api/buscar?q=` | arquitetura de agentes, templates e busca RAG |
+
+> Os mesmos dados continuam acessíveis pelos scripts (`make semana SLUG=...`, `python3 scripts/calcular_unidade.py`): o app escreve em `projetos/<slug>/estado.json`, exatamente onde os scripts leem.
 
 ---
 
@@ -112,6 +185,11 @@ Depois siga `docs/09-ROADMAP-90-DIAS.md` **literalmente**, sem pular para o dia 
 bvc/
 ├── README.md                  ← você está aqui (índice + matemática + regras)
 ├── docs/                      ← a bíblia (00 a 14)
+├── app/                       ← BVC-OS em app full stack (Node puro, sem dependências)
+│   ├── server.mjs             ← API + serve a interface (node app/server.mjs)
+│   ├── core/                  ← estado, portas G0–G6, unidade econômica, RAG, utilitários
+│   ├── agents/                ← motor (plan-and-execute, ReAct, reflexion), ferramentas e LLM opcional
+│   └── web/                   ← interface didática em 8 abas (HTML/CSS/JS, sem build)
 ├── prompts/                   ← BVC-OS: prompt master + arquitetura multiagente
 │   ├── 00-MASTER-PROMPT.md    ← cole isto no seu modelo
 │   ├── 01..06                 ← orquestrador, L1, L2, contratos/portas, implantação, exemplo

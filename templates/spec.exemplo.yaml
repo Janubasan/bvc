@@ -11,6 +11,6 @@ preco_setup: R$ 1.500
 preco_mensal: R$ 297
 garantia: se não reduzir as faltas em 30% em 60 dias, devolvo o setup
 canal: WhatsApp de grupos de gestores + Instagram de dentistas
-stack: n8n + API oficial do WhatsApp + Supabase + LLM (gpt-oss-20b)
+stack: motor BVC-OS (Node nativo, app/) + API oficial do WhatsApp + Postgres/SQLite + LLM (gpt-oss-20b)
 diferenciais: confirmação automática, reagendamento em 1 clique, relatório semanal de faltas
 metrica_sucesso: faltas por semana e tempo de recepção gasto em confirmação
