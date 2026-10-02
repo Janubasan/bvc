@@ -1,0 +1,16 @@
+# Copie, edite e rode: python3 scripts/novo_micro_saas.py --spec meu.spec.yaml
+slug: atendimento-clinicas
+nome: AgendaBot para clínicas
+autor: Seu Nome
+email: voce@seudominio.com
+publico: clínicas odontológicas com 2 a 5 cadeiras
+dor: recepcionista perde 1h por dia confirmando consultas por telefone e ainda assim 20% faltam
+resultado: reduzir faltas em 40% e devolver 1h/dia para a recepção
+prazo: 14 dias
+preco_setup: R$ 1.500
+preco_mensal: R$ 297
+garantia: se não reduzir as faltas em 30% em 60 dias, devolvo o setup
+canal: WhatsApp de grupos de gestores + Instagram de dentistas
+stack: n8n + API oficial do WhatsApp + Supabase + LLM (gpt-oss-20b)
+diferenciais: confirmação automática, reagendamento em 1 clique, relatório semanal de faltas
+metrica_sucesso: faltas por semana e tempo de recepção gasto em confirmação

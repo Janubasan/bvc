@@ -1,0 +1,160 @@
+repo,status,stars,pushed,lang,lic,desc
+wasp-lang/open-saas,ok,16044,2026-10-01,MDX,MIT,"A 100% free modern JS SaaS boilerplate (React, NodeJS, Prisma). Full-featured: Auth (email, google, github, slack, MS), Email sending, Background jobs, Landing "
+nextjs/saas-starter,ok,16157,2025-12-11,TypeScript,MIT,"Get started quickly with Next.js, Postgres, Stripe, and shadcn/ui."
+vercel/nextjs-subscription-payments,archived,7721,2025-01-23,TypeScript,MIT,"Clone, deploy, and fully customize a SaaS subscription application with Next.js."
+mickasmt/next-saas-stripe-starter,ok,3002,2026-09-28,TypeScript,MIT,"Open-source SaaS Starter with User Roles, Organizations & Admin Panel. Built using Next.js 16, Better Auth, Drizzle, Neon, Fumadocs, Shadcn/ui, Stripe, Server A"
+ixartz/SaaS-Boilerplate,ok,7440,2026-10-01,TypeScript,MIT,"🚀🎉📚 SaaS Boilerplate built with Next.js + Tailwind CSS + Shadcn UI + TypeScript. ⚡️ Full-stack React application with Auth, Multi-tenancy, Roles & Permissions, "
+scosman/CMSaasStarter,ok,2367,2026-03-21,Svelte,MIT,"A modern SaaS template/boilerplate built with SvelteKit, Tailwind, and Supabase. Includes marketing page, blog, subscriptions, auth, user dashboard, user settin"
+openstarterkit/nextjs-saas-starter-kit,ok,12,2026-09-28,TypeScript,MIT,"⚡️ Open source Next.js SaaS boilerplate and starter kit: Better Auth, Stripe, Prisma, Tailwind, TypeScript. Full payments in the free tier, not behind a paid pl"
+alifarooq9/launchmvpfast,ok,620,2025-08-10,TypeScript,MIT,"Starterkits, components, ui blocks"
+KolbySisk/next-supabase-stripe-starter,ok,814,2026-04-15,TypeScript,MIT,"The highest quality SaaS starter with Next.js, Supabase, Stripe, and shadcn/ui"
+d-ivashchuk/cascade,ok,657,2024-05-23,TypeScript,,"Best open-source SaaS boilerplate. Free, powerful & extendable."
+nextify-limited/saasfly,ok,2899,2025-08-04,TypeScript,MIT,"Your Next SaaS Template or Boilerplate ! A magic trip start with `bun create saasfly` . The more stars, the more surprises"
+async-labs/saas,ok,4517,2025-03-21,TypeScript,MIT,"Build your own SaaS business with SaaS boilerplate. Productive stack: React, Material-UI, Next, MobX, WebSockets, Express, Node, Mongoose, MongoDB. Written with"
+medusajs/medusa,ok,36552,2026-10-02,TypeScript,NOASSERTION,The world's most flexible commerce platform for agents and developers
+saleor/saleor,ok,23399,2026-10-02,Python,BSD-3-Clause,"Saleor Core: the high performance, composable, headless commerce API."
+juspay/hyperswitch,ok,45271,2026-10-02,Rust,Apache-2.0,"Open source, composable payments platform | PCI compliant | SaaS and Self-host options | Enables connectivity to multiple payment, payout, fraud, vault and toke"
+getlago/lago,ok,10650,2026-10-01,Go,AGPL-3.0,"Open Source Metering and Usage Based Billing API ⭐️ Consumption tracking, Subscription management, Pricing iterations, Payment orchestration & Revenue analytics"
+openmeterio/openmeter,ok,2363,2026-10-02,Go,Apache-2.0,"Metering and Billing for AI, API and DevOps. Collect and aggregate millions of usage events in real-time and enable usage-based billing."
+unkeyed/unkey,ok,5456,2026-10-02,Go,NOASSERTION,The Developer Platform for Modern APIs
+better-auth/better-auth,ok,30153,2026-10-02,TypeScript,MIT,The most comprehensive authentication framework
+supabase/supabase,ok,111019,2026-10-02,TypeScript,Apache-2.0,"The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications."
+pocketbase/pocketbase,ok,61249,2026-10-02,Go,MIT,Open Source realtime backend in 1 file
+appwrite/appwrite,ok,57546,2026-10-02,PHP,BSD-3-Clause,"Appwrite® - complete cloud infrastructure for your web, mobile and AI apps. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime and more"
+directus/directus,ok,38006,2026-10-02,TypeScript,NOASSERTION,"The flexible backend for all your projects 🐰 Turn your DB into a headless CMS, admin panels, or apps with a custom UI, instant APIs, auth & more."
+payloadcms/payload,ok,45063,2026-10-02,TypeScript,MIT,"Payload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Pa"
+strapi/strapi,ok,73271,2026-10-02,TypeScript,NOASSERTION,"🚀 Strapi is the leading open-source headless CMS. It’s 100% JavaScript/TypeScript, fully customizable, and developer-first."
+nocodb/nocodb,ok,65163,2026-10-02,TypeScript,NOASSERTION,🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative
+twentyhq/twenty,ok,57833,2026-10-02,TypeScript,NOASSERTION,"The open alternative to Salesforce, designed for AI."
+calcom/cal.diy,ok,48824,2026-09-26,TypeScript,MIT,Scheduling infrastructure for absolutely everyone.
+dubinc/dub,ok,24860,2026-10-02,TypeScript,NOASSERTION,"The modern link attribution platform. Loved by world-class marketing teams like Framer, Perplexity, Superhuman, Twilio, Buffer and more."
+plausible/analytics,ok,29284,2026-10-02,Elixir,AGPL-3.0,"Open source, privacy-first web analytics. Lightweight, cookie-free Google Analytics alternative. Self-hosted or cloud."
+umami-software/umami,ok,39129,2026-10-02,TypeScript,MIT,"Umami is a privacy-first analytics platform. Traffic, campaigns, behavior, conversions, and revenue in one place — no cookies, no surveillance, self-hosted or i"
+chatwoot/chatwoot,ok,37441,2026-10-02,Ruby,NOASSERTION,"Open-source live-chat, email support, omni-channel desk. An alternative to Intercom, Zendesk, Salesforce Service Cloud etc. 🔥💬"
+formbricks/formbricks,ok,13051,2026-10-02,TypeScript,NOASSERTION,Open Source Qualtrics Alternative
+documenso/documenso,ok,15301,2026-10-02,TypeScript,AGPL-3.0,The Open Source DocuSign Alternative.
+papermark/papermark,ok,9234,2026-08-28,TypeScript,NOASSERTION,Papermark is the open-source DocSend alternative  and secure data rooms with built-in analytics and custom domains.
+novuhq/novu,ok,40103,2026-10-02,TypeScript,NOASSERTION,The open-source communication infrastructure for agents and products
+listmonk/listmonk,NAO_EXISTE,0,,,,
+keila-io/keila,NAO_EXISTE,0,,,,
+heyform/heyform,ok,8993,2026-09-09,TypeScript,AGPL-3.0,Open-Source Form Builder
+baptisteArno/typebot.io,ok,10467,2026-09-30,TypeScript,NOASSERTION,💬 Typebot is a powerful chatbot builder that you can self-host.
+highlight/highlight,ok,9383,2026-10-01,TypeScript,NOASSERTION,"highlight.io: The open source, full-stack monitoring platform. Error monitoring, session replay, logging, distributed tracing, and more."
+openreplay/openreplay,ok,12936,2026-10-02,TypeScript,NOASSERTION,"Session replay, cobrowsing and product analytics you can self-host. Best for reproducing issues and iterating on your product."
+growthbook/growthbook,ok,8466,2026-10-02,TypeScript,NOASSERTION,"Open Source Feature Flags, Experimentation, and Product Analytics"
+invoiceninja/invoiceninja,ok,10205,2026-10-01,PHP,NOASSERTION,"A source-available invoice, quote, project and time-tracking app built with Laravel"
+kimai/kimai,ok,5055,2026-10-02,PHP,AGPL-3.0,"Kimai is the #1 open-source time-tracking application. From freelancers to companies and organisations - everyone can manage timesheets, generate reports, creat"
+solidtime-io/solidtime,ok,8954,2026-10-02,PHP,AGPL-3.0,Modern open-source time-tracking app
+zammad/zammad,ok,5974,2026-10-02,Ruby,AGPL-3.0,Zammad is a web based open source helpdesk/customer support system.
+freescout-help-desk/freescout,ok,4583,2026-10-02,PHP,AGPL-3.0,FreeScout — Free self-hosted omnichannel AI-powered helpdesk & shared mailbox
+Stirling-Tools/Stirling-PDF,ok,93453,2026-10-02,Java,NOASSERTION,#1 PDF Application on GitHub that lets you edit PDFs on any device anywhere
+gotenberg/gotenberg,ok,13214,2026-10-02,Go,MIT,"A developer-friendly API for converting many document formats into PDF files, and more!"
+discourse/discourse,ok,47929,2026-10-02,Ruby,GPL-2.0,"A platform for community discussion. Free, open, simple."
+NodeBB/NodeBB,ok,15230,2026-10-02,JavaScript,GPL-3.0,Node.js based forum software built for the modern web
+apache/answer,ok,15688,2026-09-22,Go,Apache-2.0,"A Q&A platform software for teams at any scales. Whether it's a community forum, help center, or knowledge management platform, you can always count on Apache A"
+langchain-ai/langchain,ok,147388,2026-10-02,Python,MIT,The agent engineering platform.
+langchain-ai/langgraph,ok,42632,2026-10-02,Python,MIT,Build resilient agents.
+microsoft/autogen,ok,61248,2026-04-15,Python,CC-BY-4.0,A programming framework for agentic AI
+microsoft/agent-framework,ok,13912,2026-10-02,Python,MIT,"A framework for building, orchestrating and deploying AI agents and multi-agent workflows with support for Python and .NET."
+crewAIInc/crewAI,ok,59291,2026-10-02,Python,MIT,"Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewAI empowers agents to work together seamlessly, tac"
+run-llama/llama_index,ok,52385,2026-10-01,Python,MIT,LlamaIndex is the document processing platform for AI
+browser-use/browser-use,ok,117007,2026-10-02,Python,MIT,Agents that use the browser.
+n8n-io/n8n,ok,206518,2026-10-02,TypeScript,NOASSERTION,"Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."
+langgenius/dify,ok,157730,2026-10-02,TypeScript,NOASSERTION,"Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move "
+FlowiseAI/Flowise,archived,55483,2026-08-13,TypeScript,NOASSERTION,"Build AI Agents, Visually"
+infiniflow/ragflow,ok,91609,2026-10-02,Go,Apache-2.0,RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context la
+OpenHands/OpenHands,ok,89822,2026-10-02,TypeScript,MIT,🙌 OpenHands: AI-Driven Development
+Skyvern-AI/skyvern,ok,23126,2026-10-02,Python,AGPL-3.0,Automate browser based workflows with AI
+browserbase/stagehand,ok,25517,2026-10-02,TypeScript,MIT,"The SDK to extract data and interact with any site on the web. Get started with Claude Code, Codex, Eve, Mastra, and more."
+firecrawl/firecrawl,ok,187930,2026-10-02,TypeScript,AGPL-3.0,"🔥 Supercharge your AI agents with data from the web and beyond. A web data API to search, scrape, and access more sources."
+unclecode/crawl4ai,ok,84651,2026-09-25,Python,Apache-2.0,"Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key."
+microsoft/markitdown,ok,188017,2026-10-02,Python,MIT,Python tool for converting files and office documents to Markdown.
+docling-project/docling,ok,68313,2026-10-02,Python,MIT,Get your documents ready for gen AI
+opendatalab/MinerU,ok,80997,2026-09-30,Python,NOASSERTION,Transforms complex documents like PDFs and Office docs into LLM-ready markdown/JSON for your Agentic workflows.
+datalab-to/marker,ok,40171,2026-10-02,Python,Apache-2.0,Convert PDF to markdown + JSON quickly with high accuracy
+unslothai/unsloth,ok,77141,2026-10-02,Python,Apache-2.0,"Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4, MiniMax-H3, Gemma 4, FLUX and more."
+huggingface/trl,ok,19439,2026-10-02,Python,Apache-2.0,Train transformer language models with reinforcement learning.
+huggingface/peft,ok,21749,2026-10-02,Python,Apache-2.0,🤗 PEFT: State-of-the-art Parameter-Efficient Fine-Tuning.
+huggingface/smolagents,ok,29653,2026-09-30,Python,Apache-2.0,🤗 smolagents: a barebones library for agents that think in code.
+huggingface/transformers,ok,166905,2026-10-02,Python,Apache-2.0,"🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference an"
+huggingface/diffusers,ok,34641,2026-10-02,Python,Apache-2.0,"🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch."
+huggingface/agents-course,ok,33132,2026-09-15,MDX,Apache-2.0,This repository contains the Hugging Face Agents Course. 
+BerriAI/litellm,ok,60061,2026-10-02,Python,NOASSERTION,"The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and l"
+langfuse/langfuse,ok,35324,2026-10-02,TypeScript,NOASSERTION,"🪢 Open source agent evals & observability: Trace, evaluate, and improve LLM applications with one open platform."
+promptfoo/promptfoo,ok,25654,2026-10-02,TypeScript,MIT,"Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare performance of GPT, Claude, Gemini, DeepSeek, and more. Simpl"
+open-webui/open-webui,ok,153810,2026-10-02,Python,NOASSERTION,"User-friendly AI Interface (Supports Ollama, OpenAI API, ...)"
+LibreChat-AI/LibreChat,ok,45203,2026-10-02,TypeScript,MIT,"Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, G"
+Mintplex-Labs/anything-llm,ok,66670,2026-10-02,JavaScript,MIT,Stop renting your intelligence. Own it with AnythingLLM. Everything you need for a powerful local-first agent experience 
+onyx-dot-app/onyx,ok,32314,2026-10-02,Python,NOASSERTION,Open Source AI Platform - AI Chat with advanced features that works with every LLM
+khoj-ai/khoj,ok,37555,2026-08-02,Python,AGPL-3.0,"Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, schedule automations, do deep research. Turn any online or loca"
+continuedev/continue,ok,36088,2026-10-02,TypeScript,Apache-2.0,open-source coding agent
+cline/cline,ok,69734,2026-10-02,TypeScript,Apache-2.0,"Autonomous coding agent as an SDK, IDE extension, or CLI assistant."
+RooCodeInc/Roo-Code,archived,24289,2026-05-15,TypeScript,Apache-2.0,Roo Code gives you a whole dev team of AI agents in your code editor.
+Aider-AI/aider,ok,49338,2026-05-22,Python,Apache-2.0,aider is AI pair programming in your terminal
+aaif-goose/goose,ok,54877,2026-10-02,Rust,Apache-2.0,"an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM"
+openai/codex,ok,127637,2026-10-02,Rust,Apache-2.0,Lightweight coding agent that runs in your terminal
+google-gemini/gemini-cli,ok,107213,2026-10-02,TypeScript,Apache-2.0,An open-source AI agent that brings the power of Gemini directly into your terminal.
+anomalyco/opencode,ok,211496,2026-10-02,TypeScript,MIT,The open source coding agent.
+mem0ai/mem0,ok,66489,2026-10-01,Python,Apache-2.0,The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.
+letta-ai/letta,ok,25007,2026-09-10,,Apache-2.0,Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.
+getzep/graphiti,ok,31387,2026-10-02,Python,Apache-2.0,Build Real-Time Knowledge Graphs for AI Agents
+chroma-core/chroma,ok,29425,2026-10-02,Rust,Apache-2.0,Search infrastructure for AI
+qdrant/qdrant,ok,34905,2026-10-02,Rust,Apache-2.0,"Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdran"
+weaviate/weaviate,ok,16859,2026-10-02,Go,NOASSERTION,"Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with th"
+pgvector/pgvector,ok,23222,2026-10-01,C,NOASSERTION,Open-source vector similarity search for Postgres
+deepset-ai/haystack,ok,26645,2026-10-02,Python,Apache-2.0,"Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with exp"
+activepieces/activepieces,ok,24858,2026-10-02,TypeScript,NOASSERTION,AI Agents & MCPs & AI Workflow Automation • (~400 MCP servers for AI agents) • AI Automation / AI Agent with MCPs • AI Workflows & AI Agents • MCPs for AI Agent
+windmill-labs/windmill,ok,18089,2026-10-02,Rust,NOASSERTION,"Open-source developer platform to power your entire infra and turn scripts into webhooks, workflows and UIs. Fastest workflow engine (13x vs Airflow). Open-sour"
+kestra-io/kestra,ok,28833,2026-10-02,Java,Apache-2.0,Event Driven Orchestration & Scheduling Platform for Mission Critical Applications
+huginn/huginn,ok,50016,2026-10-02,Ruby,MIT,Create agents that monitor and act on your behalf.  Your agents are standing by!
+triggerdotdev/trigger.dev,ok,16457,2026-10-02,TypeScript,Apache-2.0,Trigger.dev – build and deploy durable AI agents and workflows
+temporalio/temporal,ok,23426,2026-10-02,Go,MIT,Temporal service
+scrapy/scrapy,ok,64554,2026-10-02,Python,BSD-3-Clause,"Scrapy, a fast high-level web crawling & scraping framework for Python."
+apify/crawlee,ok,25969,2026-10-02,TypeScript,Apache-2.0,"Crawlee—A web scraping and browser automation library for Node.js to build reliable crawlers. In JavaScript and TypeScript. Extract data for AI, LLMs, RAG, or G"
+daijro/camoufox,ok,12280,2026-09-30,Python,MPL-2.0,🦊 Anti-detect browser
+steel-dev/steel-browser,ok,7727,2026-09-28,TypeScript,Apache-2.0,🔥 Open Source Browser API for AI Agents & Apps. Steel Browser is a batteries-included browser sandbox that lets you automate the web without worrying about infr
+airbytehq/airbyte,ok,22159,2026-10-02,Python,NOASSERTION,"Open-source data movement for ELT pipelines and AI agents — from APIs, databases & files to warehouses, lakes, and AI applications. Both self-hosted and Cloud."
+dbt-labs/dbt,ok,13959,2026-10-02,Rust,Apache-2.0,dbt enables data analysts and engineers to transform their data using the same practices that software engineers use to build applications.
+PostHog/posthog,ok,40111,2026-10-02,Python,NOASSERTION,":hedgehog: PostHog is the leading platform for building self-driving products. Our developer tools – AI observability, analytics, session replay, flags, experim"
+metabase/metabase,ok,49515,2026-10-02,Clojure,NOASSERTION,The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:
+apache/superset,ok,75012,2026-10-02,Python,Apache-2.0,Apache Superset is a Data Visualization and Data Exploration Platform
+streamlit/streamlit,ok,45873,2026-10-02,Python,Apache-2.0,Streamlit — A faster way to build and share data apps.
+gradio-app/gradio,ok,43655,2026-10-02,Python,Apache-2.0,"Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!"
+marimo-team/marimo,ok,22993,2026-10-02,Python,Apache-2.0,"A reactive notebook for Python — run reproducible experiments, query with SQL, execute as a script, deploy as an app, and version with git. Stored as pure Pytho"
+resend/react-email,ok,19802,2026-10-02,TypeScript,MIT,💌 Build and send emails using React
+Comfy-Org/ComfyUI,ok,135886,2026-10-02,Python,GPL-3.0,"The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world."
+AUTOMATIC1111/stable-diffusion-webui,ok,165182,2026-03-02,Python,AGPL-3.0,Stable Diffusion web UI
+SYSTRAN/faster-whisper,ok,25676,2026-10-01,Python,MIT,Faster Whisper transcription with CTranslate2
+m-bain/whisperX,ok,24335,2026-09-26,Python,BSD-2-Clause,WhisperX:  Automatic Speech Recognition with Word-level Timestamps (& Diarization)
+k2-fsa/sherpa-onnx,ok,15082,2026-09-22,C++,Apache-2.0,"Speech-to-text, text-to-speech, speaker diarization, speech enhancement, source separation, and VAD using next-gen Kaldi with onnxruntime without Internet conne"
+rhasspy/piper,archived,11296,2025-08-26,C++,MIT,"A fast, local neural text to speech system"
+fishaudio/fish-speech,ok,32921,2026-09-16,Python,NOASSERTION,SOTA Open Source TTS
+SWivid/F5-TTS,ok,15323,2026-09-21,Python,MIT,"Official code for ""F5-TTS: A Fairytaler that Fakes Fluent and Faithful Speech with Flow Matching"""
+myshell-ai/OpenVoice,ok,37749,2025-04-19,Python,MIT,Instant voice cloning by MIT and MyShell. Audio foundation model.
+openai/whisper,ok,109884,2026-08-31,Python,MIT,Robust Speech Recognition via Large-Scale Weak Supervision
+facebookresearch/demucs,archived,10363,2024-04-24,Python,MIT,Code for the paper Hybrid Spectrogram and Waveform Source Separation
+remotion-dev/remotion,ok,61579,2026-10-02,TypeScript,NOASSERTION,🎥      Make videos programmatically with React
+harry0703/MoneyPrinterTurbo,ok,128082,2026-10-02,Python,MIT,利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.
+invoke-ai/InvokeAI,ok,28332,2026-10-02,TypeScript,Apache-2.0,"Invoke is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using th"
+Sanster/IOPaint,archived,23310,2025-04-29,Python,Apache-2.0,"Image inpainting tool powered by SOTA AI Model. Remove any unwanted object, defect, people from your pictures or erase and replace(powered by stable diffusion) "
+danielgatis/rembg,ok,24949,2026-09-20,Python,MIT,Rembg is a tool to remove images background
+TencentARC/GFPGAN,ok,37684,2024-07-26,Python,NOASSERTION,GFPGAN aims at developing Practical Algorithms for Real-world Face Restoration.
+FFmpeg/FFmpeg,ok,64707,2026-10-02,C,NOASSERTION,Mirror of https://git.ffmpeg.org/ffmpeg.git
+sindresorhus/awesome,ok,513721,2026-09-02,,CC0-1.0,😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]
+e2b-dev/awesome-ai-agents,ok,30248,2026-08-21,,NOASSERTION,A list of AI autonomous agents
+kyrolabs/awesome-langchain,ok,9554,2026-10-02,,CC0-1.0,😎 Awesome list of tools and projects with the awesome LangChain framework
+awesome-selfhosted/awesome-selfhosted,ok,323436,2026-10-02,,NOASSERTION,A list of Free Software network services and web applications which can be hosted on your own servers
+mezod/awesome-indie,ok,11836,2024-06-12,,NOASSERTION,Resources for independent developers to make money
+cheahjs/free-llm-api-resources,NAO_EXISTE,0,,,,
+openai/openai-cookbook,ok,76319,2026-10-02,Jupyter Notebook,MIT,Examples and guides for using the OpenAI API
+anthropics/claude-cookbooks,ok,53145,2026-09-28,Jupyter Notebook,MIT,A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.
+dair-ai/Prompt-Engineering-Guide,ok,78791,2026-03-11,MDX,MIT,"🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents."
+f/prompts.chat,ok,171870,2026-10-01,HTML,NOASSERTION,"f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete pr"
+enescingoz/awesome-n8n-templates,ok,25704,2026-09-12,,NOASSERTION,"280+ free n8n automation templates — ready-to-use workflows for Gmail, Telegram, Slack, Discord, WhatsApp, Google Drive, Notion, OpenAI, and more. AI agents, RA"
+Zie619/n8n-workflows,ok,56867,2026-06-24,Python,MIT,all of the workflows of n8n i could find (also from the site itself)
+Shubhamsaboo/awesome-llm-apps,ok,140556,2026-09-30,Python,Apache-2.0,"100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source."
+e2b-dev/E2B,ok,14120,2026-10-02,Python,Apache-2.0,"Open-source, secure environment with real-world tools for enterprise-grade agents."
+microsoft/generative-ai-for-beginners,ok,120952,2026-10-01,Jupyter Notebook,MIT,"21 Lessons, Get Started Building with Generative AI "
+microsoft/AI-For-Beginners,ok,69387,2026-09-16,Jupyter Notebook,MIT,"12 Weeks, 24 Lessons, AI for All!"
+BrasilAPI/BrasilAPI,ok,11234,2026-10-02,JavaScript,MIT,Vamos transformar o Brasil em uma API?
+guibranco/BancosBrasileiros,ok,552,2026-10-02,Python,Unlicense,🇧🇷 🏦 📋 Brazilian banks list
