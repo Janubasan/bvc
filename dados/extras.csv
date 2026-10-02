@@ -1,0 +1,93 @@
+repo,status,stars,pushed,lang,lic,desc
+vercel/ai,ok,27088,2026-10-02,TypeScript,NOASSERTION,"The AI Toolkit for TypeScript. From the creators of Next.js, the AI SDK is a free open-source library for building AI-powered applications and agents "
+modelcontextprotocol/servers,ok,90959,2026-10-01,TypeScript,NOASSERTION,Model Context Protocol Servers
+punkpeye/awesome-mcp-servers,ok,95768,2026-09-27,,MIT,A collection of MCP servers.
+PaddlePaddle/PaddleOCR,ok,90519,2026-09-16,Python,Apache-2.0,"Turn any PDF or image document into structured data for your AI. A powerful, lightweight OCR toolkit that bridges the gap between images/PDFs and LLMs. Supports"
+datalab-to/marker,ok,40171,2026-10-02,Python,Apache-2.0,Convert PDF to markdown + JSON quickly with high accuracy
+datalab-to/surya,ok,21447,2026-09-11,Python,Apache-2.0,"OCR, layout analysis, reading order, table recognition in 90+ languages"
+kortix-ai/suna,ok,20241,2026-10-02,TypeScript,NOASSERTION,The open-source AI Management System
+agent0ai/agent-zero,ok,19361,2026-10-02,Python,NOASSERTION,Agent Zero AI framework
+Significant-Gravitas/AutoGPT,ok,187637,2026-10-02,Python,NOASSERTION,"AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters."
+pydantic/pydantic-ai,ok,20363,2026-10-02,Python,MIT,"How Python does AI. Agents, realtime voice, image generation, embeddings. Every model, every interface, typed end to end."
+openai/openai-agents-python,ok,29810,2026-10-02,Python,MIT,"A lightweight, powerful framework for multi-agent workflows"
+anomalyco/sst,ok,26326,2026-07-12,TypeScript,MIT,Build full-stack apps on your own infrastructure.
+excalidraw/excalidraw,ok,133406,2026-10-01,TypeScript,MIT,Virtual whiteboard for sketching hand-drawn like diagrams
+tldraw/tldraw,ok,50715,2026-10-02,TypeScript,NOASSERTION,"Build infinite canvas apps in React with the tldraw SDK. World's best, top-most agent recommended #1 five star SDK."
+shadcn-ui/ui,ok,124998,2026-10-02,TypeScript,MIT,"Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own."
+tailwindlabs/tailwindcss,ok,97751,2026-09-25,TypeScript,MIT,A utility-first CSS framework for rapid UI development.
+honojs/hono,ok,32400,2026-10-02,TypeScript,MIT,Web framework built on Web Standards
+trpc/trpc,ok,40683,2026-10-02,TypeScript,MIT,🧙‍♀️  Move Fast and Break Nothing. End-to-end typesafe APIs made easy. 
+TanStack/query,ok,50392,2026-10-02,TypeScript,MIT,"🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query."
+drizzle-team/drizzle-orm,ok,35938,2026-10-01,TypeScript,Apache-2.0,ORM
+prisma/orm,ok,47688,2026-10-02,TypeScript,Apache-2.0,"Next-generation ORM for Node.js & TypeScript | PostgreSQL, MySQL, MariaDB, SQL Server, SQLite, MongoDB and CockroachDB"
+TryGhost/Ghost,ok,55471,2026-10-02,TypeScript,MIT,"Independent technology for modern publishing, memberships, subscriptions and newsletters."
+baserow/baserow,ok,6068,2026-10-02,Python,NOASSERTION,"Build databases, automations, apps & agents with AI — no code.  Open source platform available on cloud and self-hosted. GDPR, HIPAA, SOC 2 compliant. Best Airt"
+teableio/teable,ok,21856,2026-10-02,TypeScript,NOASSERTION,✨ AI Spreadsheet for Business
+Budibase/budibase,ok,28331,2026-10-02,TypeScript,NOASSERTION,"AI agents, automations and apps that run your operations. Model agnostic."
+ToolJet/ToolJet,ok,41027,2026-10-02,JavaScript,AGPL-3.0,"Open-source foundation of ToolJet AI - the enterprise app generation platform for internal tools, dashboards, business applications, workflows and AI agents. Bu"
+meilisearch/meilisearch,ok,59468,2026-10-02,Rust,NOASSERTION,A lightning-fast search engine API bringing AI-powered hybrid search to your sites and applications.
+typesense/typesense,ok,26624,2026-10-02,C++,GPL-3.0,"Open Source alternative to Algolia + Pinecone and an Easier-to-Use alternative to ElasticSearch ⚡ 🔍 ✨ Fast, typo tolerant, in-memory fuzzy Search Engine for bui"
+vercel/chatbot,ok,20982,2026-07-08,TypeScript,NOASSERTION,"A full-featured, hackable Next.js AI chatbot built by Vercel"
+steven-tey/novel,ok,16449,2025-01-18,TypeScript,Apache-2.0,Notion-style WYSIWYG editor with AI-powered autocompletion.
+nhost/nhost,ok,9330,2026-10-02,TypeScript,MIT,The Open Source Firebase Alternative with GraphQL.
+hasura/graphql-engine,ok,32131,2026-09-21,TypeScript,Apache-2.0,"Blazing fast, instant realtime GraphQL APIs on all your data with fine grained access control, also trigger webhooks on database events."
+vendurehq/vendure,ok,8495,2026-10-02,TypeScript,NOASSERTION,"Open-source headless commerce platform built with TypeScript, NestJS, React, and GraphQL"
+woocommerce/woocommerce,ok,10536,2026-10-02,PHP,NOASSERTION,"A customizable, open-source ecommerce platform built on WordPress. Build any commerce solution you can imagine."
+bagisto/bagisto,ok,28200,2026-10-01,PHP,MIT,"Open Source eCommerce & Multi-Vendor Marketplace Platform Built with Laravel for Enterprise-Scale Commerce, Supporting 10M+ SKUs"
+spree/spree,ok,15738,2026-10-02,Ruby,BSD-3-Clause,"Open Source Platform for DTC, B2B Commerce, Marketplaces & Omnichannel. REST APIs, TypeScript SDKs, and production-ready Next.js storefront. Self-host it. Own y"
+microsoft/playwright,ok,97015,2026-10-02,TypeScript,Apache-2.0,"Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API. "
+puppeteer/puppeteer,ok,95643,2026-10-02,TypeScript,Apache-2.0,JavaScript API for Chrome and Firefox
+SWE-agent/SWE-agent,ok,20467,2026-09-28,Python,MIT,"SWE-agent takes a GitHub issue and tries to automatically fix it, using your LM of choice. It can also be employed for offensive cybersecurity or competitive co"
+stanfordnlp/dspy,ok,38473,2026-10-02,Python,MIT,DSPy: The framework for programming—not prompting—language models
+supertokens/supertokens-core,ok,15328,2026-10-02,Java,NOASSERTION,Open source alternative to Auth0 / Firebase Auth / AWS Cognito 
+ory/kratos,ok,13904,2026-07-29,Go,Apache-2.0,"Headless cloud-native authentication and identity management written in Go. Scales to a billion+ users. Replace Homegrown, Auth0, Okta, Firebase with better UX "
+appsmithorg/appsmith,ok,40992,2026-10-02,TypeScript,Apache-2.0,"Platform to build admin panels, internal tools, and dashboards. Integrates with 25+ databases and any API."
+grafana/grafana,ok,77041,2026-10-02,TypeScript,AGPL-3.0,"The open and composable observability and data visualization platform. Visualize metrics, logs, and traces from multiple sources like Prometheus, Loki, Elastics"
+getsentry/sentry,ok,45024,2026-10-02,Python,NOASSERTION,Developer-first error tracking and performance monitoring
+SigNoz/signoz,ok,32266,2026-10-02,TypeScript,NOASSERTION,"SigNoz is an open-source, OpenTelemetry-native observability platform for your team and their AI agents. Get logs, metrics, and traces in one tool with features"
+louislam/uptime-kuma,ok,92068,2026-10-02,JavaScript,MIT,A fancy self-hosted monitoring tool
+lharries/whatsapp-mcp,ok,6377,2025-07-13,Go,MIT,WhatsApp MCP server
+openai/whisper,ok,109884,2026-08-31,Python,MIT,Robust Speech Recognition via Large-Scale Weak Supervision
+Vaibhavs10/insanely-fast-whisper,ok,13061,2025-10-25,Jupyter Notebook,Apache-2.0,
+collabora/WhisperLive,ok,4305,2026-09-10,Python,MIT,A nearly-live implementation of OpenAI's Whisper.
+myshell-ai/MeloTTS,ok,7651,2024-12-24,Python,MIT,"High-quality multi-lingual text-to-speech library by MyShell.ai. Support English, Spanish, French, Chinese, Japanese and Korean."
+Tongyi-MAI/Z-Image,ok,12058,2026-02-09,Python,Apache-2.0,
+zai-org/CogVideo,ok,13051,2025-11-04,Python,Apache-2.0,text and image to video generation: CogVideoX (2024) and CogVideo (ICLR 2023)
+hpcaitech/Open-Sora,ok,29854,2026-04-09,Python,Apache-2.0,Open-Sora: Democratizing Efficient Video Production for All
+Wan-Video/Wan2.2,ok,17698,2026-09-21,Python,Apache-2.0,Wan: Open and Advanced Large-Scale Video Generative Models
+tencent-ailab/V-Express,ok,2357,2025-01-24,Python,,"V-Express aims to generate a talking head video under the control of a reference image, an audio, and a sequence of V-Kps images."
+s0md3v/roop,archived,3562,2026-03-13,Python,AGPL-3.0,roop extension for StableDiffusion web-ui
+deepinsight/insightface,ok,29882,2026-09-09,Python,,State-of-the-art 2D and 3D Face Analysis Project
+facefusion/facefusion,ok,30104,2026-10-02,Python,NOASSERTION,Industry leading face manipulation platform
+gradio-app/gradio,ok,43655,2026-10-02,Python,Apache-2.0,"Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!"
+deepset-ai/haystack,ok,26645,2026-10-02,Python,Apache-2.0,"Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Design modular pipelines and agent workflows with exp"
+run-llama/llama_index,ok,52385,2026-10-01,Python,MIT,LlamaIndex is the document processing platform for AI
+chroma-core/chroma,ok,29425,2026-10-02,Rust,Apache-2.0,Search infrastructure for AI
+pgvector/pgvector,ok,23222,2026-10-01,C,NOASSERTION,Open-source vector similarity search for Postgres
+weaviate/weaviate,ok,16859,2026-10-02,Go,NOASSERTION,"Weaviate is an open-source vector database that stores both objects and vectors, allowing for the combination of vector search with structured filtering with th"
+qdrant/qdrant,ok,34905,2026-10-02,Rust,Apache-2.0,"Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of AI. Also available in the cloud https://cloud.qdran"
+Unstructured-IO/unstructured,ok,15523,2026-10-02,HTML,Apache-2.0,"Convert documents to structured data effortlessly. Unstructured is open-source ETL solution for transforming complex documents into clean, structured formats fo"
+camel-ai/camel,ok,17803,2026-09-30,Python,Apache-2.0,🐫 CAMEL: The first and the best multi-agent framework. Finding the Scaling Law of Agents. https://www.camel-ai.org
+FoundationAgents/MetaGPT,ok,70718,2026-01-21,Python,MIT,"🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming"
+open-webui/pipelines,ok,2437,2025-08-18,Python,MIT,"Pipelines: Versatile, UI-Agnostic OpenAI-Compatible Plugin Framework "
+LibreChat-AI/LibreChat,ok,45203,2026-10-02,TypeScript,MIT,"Enhanced ChatGPT Clone: Features Agents, MCP, Skills, DeepSeek, Anthropic, AWS, OpenAI, Responses API, Azure, Groq, o1, GPT-5, Mistral, OpenRouter, Vertex AI, G"
+letta-ai/letta,ok,25007,2026-09-10,,Apache-2.0,Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.
+letta-ai/letta,ok,25007,2026-09-10,,Apache-2.0,Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.
+anthropics/anthropic-sdk-python,ok,3940,2026-09-30,Python,MIT,
+openai/openai-python,ok,31734,2026-10-02,Python,Apache-2.0,The official Python library for the OpenAI API
+mistralai/mistral-inference,archived,10822,2026-06-16,Jupyter Notebook,Apache-2.0,Official inference library for Mistral models
+ollama/ollama,ok,182066,2026-10-02,Go,MIT,"Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models."
+ggml-org/llama.cpp,ok,130164,2026-10-02,C++,MIT,LLM inference in C/C++
+vllm-project/vllm,ok,93080,2026-10-02,Python,Apache-2.0,A high-throughput and memory-efficient inference and serving engine for LLMs
+huggingface/text-generation-inference,archived,10884,2026-03-21,Python,Apache-2.0,Large Language Model Text Generation Inference
+unslothai/notebooks,ok,5708,2026-09-27,Jupyter Notebook,LGPL-3.0,"250+ Fine-tuning & RL Notebooks for text, vision, audio, embedding, TTS models."
+axolotl-ai-cloud/axolotl,ok,12512,2026-10-02,Python,Apache-2.0,Go ahead and axolotl questions
+hiyouga/LlamaFactory,ok,75280,2026-09-28,Python,Apache-2.0,Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)
+microsoft/qlora,NAO_EXISTE,0,,,,
+artidoro/qlora,ok,11030,2024-06-10,Jupyter Notebook,MIT,QLoRA: Efficient Finetuning of Quantized LLMs
+openbq-org/OpenBB,ok,73763,2026-10-02,Python,NOASSERTION,"Open Data Platform for analysts, quants and AI agents."
+microsoft/qlib,ok,49101,2026-09-22,Python,MIT,"Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supp"
+freqtrade/freqtrade,ok,54972,2026-10-02,Python,GPL-3.0,"Free, open source crypto trading bot"
+jesse-ai/jesse,ok,8605,2026-10-01,Python,MIT,An advanced crypto trading bot written in Python
+hummingbot/hummingbot,ok,20291,2026-09-28,Python,Apache-2.0,Open source software that helps you create and deploy high-frequency crypto trading bots
+knadh/listmonk,ok,23664,2026-10-02,Go,AGPL-3.0,"High performance, self-hosted, newsletter and mailing list manager with a modern dashboard. Single binary app."
