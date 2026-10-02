@@ -1,5 +1,7 @@
 # 12 — Banco de Prompts (copie, cole e adapte)
 
+> Para o **sistema completo de prompts com multiagentes** (Prompt Master, orquestrador, agentes de domínio, especialistas e portas de decisão), use [`../prompts/`](../prompts/README.md). Este documento é o banco de prompts avulsos do dia a dia.
+>
 > Regra de uso: coloque o contexto **antes** do pedido, diga o **formato de saída** e o que **não fazer**. Troque tudo que estiver entre `[colchetes]`.
 > Modelos: use o mais barato que resolve (doc 04). Prompts salvos em `templates/prompts-agente.md.tmpl`.
 

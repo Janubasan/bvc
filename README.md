@@ -25,8 +25,12 @@ Este repositório não é um curso motivacional. É um **sistema operacional de 
 | [`docs/12-PROMPTS.md`](docs/12-PROMPTS.md) | Banco de prompts (venda, conteúdo, suporte, código, pesquisa, agente) para copiar e colar |
 | [`docs/13-ATLAS-50-MICRO-SAAS.md`](docs/13-ATLAS-50-MICRO-SAAS.md) | 50 micro-SaaS viáveis hoje: dor, público, preço, canal e qual modelo/repo usar |
 | [`docs/14-ANTI-BURRO.md`](docs/14-ANTI-BURRO.md) | As 40 armadilhas que quebram quem começa (e como sair delas) |
+| **[`prompts/`](prompts/README.md)** | **BVC-OS: Prompt Master + sistema multiagente em camadas** (orquestrador, 5 agentes de domínio, 9 especialistas, contratos de handoff e portas G0-G6) |
 | [`templates/`](templates/) | Templates auto-preenchíveis: PRD, oferta, landing, preço, lançamento em X/Reddit, cold e-mail |
 | [`scripts/novo_micro_saas.py`](scripts/novo_micro_saas.py) | Gera um projeto completo (docs + prompts + .env + checklist) a partir de um `spec.yaml` |
+| [`scripts/master_orchestrator.py`](scripts/master_orchestrator.py) | Orquestrador local do BVC-OS: estado, auditoria de portas, handoffs e montagem do prompt (dry-run) |
+| [`scripts/calcular_unidade.py`](scripts/calcular_unidade.py) | Unidade econômica: ticket, CAC, LTV, payback, margem, custo de IA por cliente e runway |
+| [`Makefile`](Makefile) | Atalhos: `make semana`, `make gates`, `make unidade`, `make prompt` |
 | [`scripts/verificar_links.py`](scripts/verificar_links.py) | Revalida todos os repositórios e modelos citados (auditoria de link morto) |
 | [`dados/`](dados/) | Datasets usados na bíblia: repositórios e modelos verificados via API |
 
@@ -48,6 +52,13 @@ python3 scripts/novo_micro_saas.py --exemplo > meu.spec.yaml
 python3 scripts/novo_micro_saas.py --spec meu.spec.yaml
 # -> cria projetos/<seu-slug>/ com PRD, oferta, preço, landing,
 #    plano de lançamento em X e Reddit, cold e-mails e .env de exemplo
+
+# 4) Ligue o sistema multiagente (BVC-OS) no seu projeto
+python3 scripts/master_orchestrator.py init --slug <seu-slug>
+python3 scripts/master_orchestrator.py gates --slug <seu-slug>     # auditoria das portas G0-G6
+python3 scripts/calcular_unidade.py --slug <seu-slug>              # ticket, CAC, LTV, margem, runway
+make semana SLUG=<seu-slug>                                        # ciclo completo -> prompt para o modelo
+# ou simplesmente cole prompts/00-MASTER-PROMPT.md no seu chat e use /status, /proximo, /semana
 ```
 
 Depois siga `docs/09-ROADMAP-90-DIAS.md` **literalmente**, sem pular para o dia 8 antes de fechar o dia 3.
@@ -101,12 +112,19 @@ Depois siga `docs/09-ROADMAP-90-DIAS.md` **literalmente**, sem pular para o dia 
 bvc/
 ├── README.md                  ← você está aqui (índice + matemática + regras)
 ├── docs/                      ← a bíblia (00 a 14)
+├── prompts/                   ← BVC-OS: prompt master + arquitetura multiagente
+│   ├── 00-MASTER-PROMPT.md    ← cole isto no seu modelo
+│   ├── 01..06                 ← orquestrador, L1, L2, contratos/portas, implantação, exemplo
+│   └── agentes.json           ← arquitetura legível por máquina
 ├── templates/                 ← 10 templates auto-preenchíveis + spec.exemplo.yaml
 ├── scripts/
 │   ├── novo_micro_saas.py     ← gera projetos/<slug>/ pronto a partir do seu spec
+│   ├── master_orchestrator.py ← estado, portas, handoffs e prompt final (dry-run)
+│   ├── calcular_unidade.py    ← ticket, CAC, LTV, payback, margem, runway
 │   ├── verificar_links.py     ← revalida repositórios e modelos citados
 │   └── gerar_biblia_github.py ← regenera o docs/03 a partir dos dados verificados
 ├── dados/                     ← catálogo curado + CSVs verificados
+├── Makefile                   ← atalhos (make semana, gates, unidade)
 └── projetos/                  ← sua saída (não versionada; criada pelo gerador)
 ```
 
