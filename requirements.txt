@@ -1,0 +1,13 @@
+# O núcleo JEV-LAYA roda 100% com a biblioteca padrão do Python (>= 3.10).
+# Nada abaixo é obrigatório para o motor de decisão — só para o ecossistema estendido.
+
+pytest>=8.0        # harness de validação (testes/)
+
+# --- Integrações de produção (fase SaaS) — descomente quando plugar as fontes reais ---
+# fastapi            # backend /generate-content, /r/{id}, /veredito
+# uvicorn            # servidor ASGI
+# httpx              # chamadas às APIs oficiais (Shopee Open API, ML, PA-API)
+# pytrends           # Google Trends -> preditor J (tendencia_busca)
+# praw               # Reddit API -> buzz de nicho (preditor E)
+# anthropic          # Claude para preenchimento da matriz de criativos
+# redis              # contador de cliques do encurtador harness.link/r/{id}
