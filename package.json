@@ -1,0 +1,10 @@
+{
+  "name": "campo-afiliado",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Guia de campo interativo para marketing de afiliados responsável.",
+  "scripts": {
+    "test": "node --check app.js && node scripts/validate.mjs",
+    "start": "python3 -m http.server 4173 --bind 0.0.0.0"
+  }
+}
