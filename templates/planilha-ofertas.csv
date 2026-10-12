@@ -1,0 +1,14 @@
+nome,programa,rede,categoria,tipo_comissao,comissao_pct,comissao_fixa,aov,cookie_dias,recorrencia_meses,cr_esperada,pagamento_minimo,prazo_pagamento,geo,fonte,url_cadastro,moeda,observacoes
+Curso de Excel avançado,Hotmart,In-house,infoproduto,CPS,50,0,997,60,0,1.2,20,30 dias,BR,painel oficial,https://hotmart.com/pt-br/affiliate,BRL,cookie configuravel pelo produtor 60/90/180
+Cadeira ergonômica premium,Marca direta,In-house,casa,CPS+bounty,8,120,1890,30,0,1.5,100,30 dias,BR,pagina oficial do programa,https://exemplo.com.br/afiliados,BRL,bounty por venda aprovada
+Beleza e skincare,Amazon Associados,In-house,varejo,CPS,13,0,150,1,0,6.0,30,60 dias apos fim do mes,BR,oficial anexo 14/04/2026,https://associados.amazon.com.br,BRL,sessao 24h; carrinho ate 89 dias
+Eletrodoméstico,Parceiro Magalu,In-house,varejo,CPS,7,0,900,7,0,2.0,50,quinzenal,BR,oficial,https://www.parceiromagalu.com.br,BRL,niveis 1000-8000 pontos mudam a taxa
+Moda e beleza,Mercado Livre Afiliados,In-house,varejo,CPS,15,0,260,1,0,2.5,0,ate 60 dias,BR,oficial+compilado,https://www.mercadolivre.com.br/afiliados,BRL,ate 16% por categoria; compra em 24h
+Produto de impulso,Shopee Afiliados,In-house,varejo,CPS,3,0,90,7,0,4.0,10,PF dia 10 / PJ dia 30,BR,oficial,https://affiliate.shopee.com.br,BRL,extra do vendedor pode elevar muito a taxa
+Infoproduto low ticket,Kiwify,In-house,infoproduto,CPS,60,0,97,180,0,3.0,5,rapido,BR,painel oficial,https://kiwify.com.br,BRL,minimo de saque R$5
+SaaS de e-mail marketing,Beehiiv/Impact,Impact,saas,CPS recorrente,30,0,49,60,24,2.0,10,30-60 dias,GLOBAL,oficial,https://impact.com,USD,recorrencia 24 meses
+Hospedagem,Hostinger,In-house,hosting,bounty,0,65,65,30,0,2.5,50,45 dias,GLOBAL,oficial,https://www.hostinger.com/affiliates,USD,bounty por venda
+VPN,NordVPN,Impact,vpn,CPS,30,0,60,30,12,1.8,25,30 dias,GLOBAL,oficial,https://nordvpn.com/affiliates,USD,alta sazonalidade
+Cartão de crédito US,Chase/Amex via rede,CJ,financas,bounty,0,150,0,30,0,1.5,50,60 dias,US,oficial,https://www.cj.com,USD,bounty por aprovacao
+Energia solar,Instalador regional,In-house,home services,CPA,0,250,0,60,0,1.0,250,45 dias,US,oficial,https://exemplo.com,USD,lead qualificado
+Produto TikTok Shop,TikTok Shop BR,TikTok,social commerce,CPS,12,0,75,0,0,4.7,0,conforme app,BR,oficial+imprensa,https://seller-br.tiktok.com,BRL,comissao definida pelo lojista 5-30%

@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Saídas geradas no dia a dia (não versionar)
+site-go/
+*.log
+clicks.log
+
+# Sistema
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+slug,destino,programa,sid,subid_param,ativo
+cadeira-x,https://loja.example.com.br/cadeira-x?tag=MEUTAG,marca-direta,tbl-top,subid,sim
+amazon-beleza-serum,https://www.amazon.com.br/dp/B0EXAMPLE?tag=meusite-20,amazon-br,art-meio,,sim
+magalu-geladeira,https://www.magazineluiza.com.br/produto/example?parceiro=MEUID,magalu,cta-fim,,sim
+hotmart-excel,https://go.hotmart.com/EXAMPLE?ap=MEUID,hotmart,cta-fim,sck,sim
+kiwify-ebook,https://pay.kiwify.com.br/EXAMPLE?afid=MEUID,kiwify,tbl-top,src,sim
+shopee-oferta-dia,https://s.shopee.com.br/EXAMPLE,shopee,story,,sim
+ml-moda,https://mercadolivre.com.br/EXAMPLE?matt_tool=EXAMPLE,mercadolivre,tbl-top,,sim
+beehiiv-email,https://www.beehiiv.com/?via=MEUID,impact,art-meio,irclickid,sim
+hostinger-site,https://www.hostinger.com/?ref=MEUID,hostinger,cta-fim,subid,sim
+nordvpn,https://nordvpn.com/?ref=MEUID,nordvpn,art-meio,subid,sim

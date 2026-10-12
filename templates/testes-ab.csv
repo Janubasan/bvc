@@ -1,0 +1,2 @@
+id,data_inicio,hipotese,variavel,pagina_ou_peca,variacao_a,variacao_b,amostra_minima,cliques_a,receita_a,epc_a,cliques_b,receita_b,epc_b,resultado,decisao
+AB-001,2026-10-01,Tabela comparativa no topo gera mais clique que CTA apenas no fim,posicao do CTA,/melhores/cadeira-ergonomica,CTA no fim,tabela no topo + CTA no fim,300 por variacao,0,0,0,0,0,0,,

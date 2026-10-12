@@ -1,0 +1,39 @@
+DISCLOSURE POR PLATAFORMA (copie e adapte)
+
+--- Instagram / Facebook (legenda, PRIMEIRA linha) ---
+#publi Conteúdo com links de afiliado: se você comprar, eu ganho comissão sem custo extra.
+[+ ativar "Parceria paga" quando houver acordo com a marca]
+
+--- TikTok ---
+[+ ativar "Branded content"/"Conteúdo comercial" quando aplicável]
+Legenda: #publi Link de afiliado na bio/comentário. Comissão sem custo extra pra você.
+Vídeo (fala, primeiros 3s): "Esse vídeo tem link de afiliado, tá?"
+TikTok Shop: usar o produto nativo (carrinho/laranja) — disclosure da plataforma já aparece;
+reforce na fala.
+
+--- YouTube ---
+Fala (até 30s): "Os links abaixo são de afiliado: se você comprar por eles, o canal ganha uma
+comissão e isso não muda o seu preço."
+On-screen (mesmo momento): texto "Link de afiliado · apoio ao canal"
+Descrição (1ª linha): "⚠️ Links de afiliado: ganho comissão sem custo extra para você."
+Descrição (se Amazon): "Como Associado Amazon, ganho por compras qualificadas."
+[+ marcar "Contém promoção paga" quando houver acordo direto]
+Comentário fixado: disclosure curto + link /go/slug?sid=pinned
+
+--- X / Twitter ---
+Primeiro tweet: "#ad" ou "Publi: link de afiliado" antes do link.
+
+--- Pinterest ---
+Descrição do pin: "Contém link de afiliado." (nunca link direto se a rede proibir — mande para o artigo)
+
+--- E-mail / newsletter ---
+Rodapé + 1ª menção: "Esta newsletter contém links de afiliado. Se você comprar por eles, recebemos
+uma comissão sem custo extra — é assim que este conteúdo continua gratuito."
+
+--- WhatsApp / Telegram (grupo de ofertas) ---
+Mensagem fixada: "Grupo com links de afiliado: comprando por aqui você apoia o canal sem pagar mais.
+Regras: sem spam, sem promessa de resultado, ofertas verificadas."
+
+--- Lives (qualquer plataforma) ---
+Repetir o disclosure a cada 3–5 minutos (verbal + on-screen). Cada espectador que entra sem ver
+disclosure é uma violação separada (FTC).
