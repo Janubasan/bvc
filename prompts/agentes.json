@@ -1,0 +1,126 @@
+{
+  "versao": "1.0",
+  "nome": "BVC-OS — Sistema Operacional de Renda com IA",
+  "descricao": "Arquitetura modular em camadas de agentes para validar, vender, entregar, precificar e escalar micro-SaaS e serviços com IA.",
+  "principios": [
+    "um agente = uma responsabilidade",
+    "todo handoff usa o mesmo contrato",
+    "nenhum avanço de etapa sem porta aprovada com evidencia",
+    "nunca inventar dados: usar [SEM DADO] e dizer como obter",
+    "custo sempre estimado; modelo mais barato que resolve a tarefa",
+    "escalada humana em preco, contrato, dado sensivel e acao irreversivel"
+  ],
+  "camadas": {
+    "L0": { "papel": "orquestrador", "prompt": "prompts/01-ORQUESTRADOR.md", "modelo": "forte" },
+    "L1": { "papel": "agentes de dominio", "prompt": "prompts/02-AGENTES-L1.md", "modelo": "medio-forte" },
+    "L2": { "papel": "especialistas (workers)", "prompt": "prompts/03-AGENTES-L2.md", "modelo": "pequeno/local" },
+    "L3": { "papel": "servicos compartilhados (memoria, RAG em docs/ e dados/, telemetria)", "modelo": "-" },
+    "L4": { "papel": "guardrails (formato, dados, licenca, LGPD, custo, promessa)", "prompt": "prompts/04-CONTRATOS-E-PORTAS.md", "modelo": "medio" }
+  },
+  "agentes_l1": [
+    {
+      "id": "AG-VALIDA",
+      "missao": "provar dor e disposicao a pagar com evidencia",
+      "portas": ["G0", "G1"],
+      "consome": ["dor", "publico", "preco_hipotetico", "pesquisa_mercado"],
+      "produz": ["hipotese_testavel", "plano_de_teste_7d", "roteiro_entrevista", "tabela_concorrentes", "sinais_de_dinheiro"],
+      "especialistas": ["pesquisador", "entrevistador"],
+      "kpis": ["conversas", "dores_com_custo", "sinais_de_dinheiro", "taxa_aprovacao_G0_G1"]
+    },
+    {
+      "id": "AG-OFERTA",
+      "missao": "desenhar oferta, preco, planos, garantia e proposta",
+      "portas": ["G1"],
+      "consome": ["dores_comprovadas", "custo_atual_do_cliente", "concorrentes_precos", "capacidade_entrega"],
+      "produz": ["oferta_1_frase", "3_planos", "garantia", "proposta_1_pagina", "script_10_objecoes", "regra_desconto"],
+      "especialistas": ["copywriter", "pesquisador", "financeiro"],
+      "kpis": ["taxa_resposta", "conversao_proposta", "ticket_medio", "objecoes_recorrentes"]
+    },
+    {
+      "id": "AG-CANAL",
+      "missao": "gerar conversas qualificadas todos os dias em um canal dominado",
+      "portas": ["G4"],
+      "consome": ["oferta_aprovada", "publico", "canal_escolhido"],
+      "produz": ["20_abordagens", "5_pecas_conteudo", "1_post_longo", "cadencia_14_dias", "lista_100_contatos", "metricas_canal"],
+      "especialistas": ["copywriter", "sdr", "analista-de-dados"],
+      "kpis": ["conversas_dia", "taxa_resposta", "cac", "custo_por_conversa", "clientes_por_canal"]
+    },
+    {
+      "id": "AG-ENTREGA",
+      "missao": "entregar resultado medido e transformar processo repetido em produto",
+      "portas": ["G2", "G3"],
+      "consome": ["escopo_vendido", "prazo", "garantia", "stack", "dados_cliente"],
+      "produz": ["plano_entrega_marcos", "stack_justificada_custo", "automacao_guardrails", "medicao_antes_depois", "onboarding_7d", "checklist_qa", "registro_processo"],
+      "especialistas": ["engenheiro-de-produto", "qa-avaliador"],
+      "kpis": ["tempo_ate_primeiro_valor", "entregas_no_prazo", "horas_por_cliente", "custo_ia_por_cliente", "retrabalho"]
+    },
+    {
+      "id": "AG-CAIXA",
+      "missao": "proteger margem e caixa, cobrar, reter e formalizar",
+      "portas": ["G5", "G6"],
+      "consome": ["receita_recebida", "mrr", "custos", "churn", "ativacao", "cobranca"],
+      "produz": ["painel_8_numeros", "fluxo_90_dias_3_cenarios", "plano_cobranca_dunning", "plano_anti_churn", "otimizacao_custo_ia", "checklist_formalizacao_br"],
+      "especialistas": ["financeiro", "analista-de-dados", "guardiao-lgpd"],
+      "kpis": ["mrr", "churn", "ltv_cac", "payback", "margem_bruta", "custo_ia_por_cliente", "runway"]
+    }
+  ],
+  "agentes_l2": [
+    { "id": "pesquisador", "tarefa": "fatos com fonte e data", "saida": "tabela [afirmacao|fonte|data|confianca]" },
+    { "id": "entrevistador", "tarefa": "roteiros e analise de conversas", "saida": "citas literais + classificacao de sinal" },
+    { "id": "copywriter", "tarefa": "textos na voz do usuario", "saida": "peca no formato e limite do canal" },
+    { "id": "sdr", "tarefa": "abordagens e qualificacao de leads", "saida": "mensagens + classificacao A/B/C com proxima acao" },
+    { "id": "engenheiro-de-produto", "tarefa": "arquitetura e MVP", "saida": "arquitetura + stack + custo em 100 clientes + MVP 5 dias" },
+    { "id": "qa-avaliador", "tarefa": "validar entregas contra criterios", "saida": "aprovado/reprovado + 3 casos que quebram" },
+    { "id": "analista-de-dados", "tarefa": "metricas em decisao", "saida": "funil + vazamento + experimento mais barato" },
+    { "id": "guardiao-lgpd", "tarefa": "compliance de dados e licencas", "saida": "tabela de riscos + correcoes priorizadas" },
+    { "id": "financeiro", "tarefa": "caixa, impostos e precificacao", "saida": "fluxo 3 cenarios + margem + alertas" }
+  ],
+  "portas": {
+    "G0": { "nome": "Dor real", "criterio": ">=15 conversas e >=5 com gasto em dinheiro/tempo", "libera": "construir" },
+    "G1": { "nome": "Sinal de dinheiro", "criterio": ">=3 pagos/pre-pagos/cartas assinadas", "libera": "investir em produto" },
+    "G2": { "nome": "Entrega", "criterio": "1 cliente com resultado medido + depoimento", "libera": "escalar venda" },
+    "G3": { "nome": "Recorrencia", "criterio": ">=3 mensalidades ativas + 1 renovacao", "libera": "virar produto" },
+    "G4": { "nome": "Canal", "criterio": ">=10 clientes do mesmo canal + CAC conhecido", "libera": "2o canal" },
+    "G5": { "nome": "Margem", "criterio": "custo IA+infra <30% da receita por 2 meses", "libera": "escalar volume" },
+    "G6": { "nome": "Sistema", "criterio": "4 semanas sem intervencao manual critica", "libera": "portfolio/2o produto" }
+  },
+  "percursos": {
+    "P1": { "nome": "Caixa rapido", "prazo": "0-30d", "entregas": ["oferta", "100 contatos", "10 conversas", "3 pagantes", "1 entrega medida"], "portas": ["G0", "G1", "G2"] },
+    "P2": { "nome": "Recorrencia", "prazo": "30-60d", "entregas": ["empacotar mensal", "3 mensalidades", "ritual de valor mensal"], "portas": ["G3"] },
+    "P3": { "nome": "Produto", "prazo": "60-90d", "entregas": ["PRD", "MVP", "migrar clientes", "cobrar software"], "portas": ["G3"] },
+    "P4": { "nome": "Canal", "prazo": "90-180d", "entregas": ["1 canal dominado", "90 dias de conteudo/outbound", "CAC conhecido"], "portas": ["G4"] },
+    "P5": { "nome": "Portfolio/Escala", "prazo": "180d+", "entregas": ["automacao", "parceiros/white-label", "margem >70%", "2o produto ou aquisicao"], "portas": ["G5", "G6"] }
+  },
+  "contrato_handoff": {
+    "obrigatorios": ["id", "de", "para", "objetivo", "saida_esperada", "criterios_aceitacao", "prazo", "status"],
+    "opcionais": ["contexto", "entrada", "custo_estimado", "resultado", "evidencia", "aprendizado"],
+    "status_validos": ["pendente", "em_curso", "bloqueado", "pronto", "reprovado"],
+    "codigos_reprovacao": {
+      "E-FMT": "saida fora do formato",
+      "E-DADO": "numero sem fonte ou inventado",
+      "E-LIC": "licenca incompativel com uso comercial",
+      "E-LGPD": "dado pessoal sem base legal ou minimizacao",
+      "E-CUSTO": "custo estimado acima de 30% da receita",
+      "E-PROMESSA": "promessa de renda ou garantia nao controlavel",
+      "E-ESCOPO": "tarefa mistura duas responsabilidades"
+    }
+  },
+  "comandos": ["/iniciar", "/status", "/proximo", "/validar", "/preencher", "/porteiro", "/porta", "/canal", "/entrega", "/caixa", "/auditoria", "/semana", "/escalar"],
+  "formato_resposta": ["diagnostico", "decisao", "handoffs", "artefato", "acao_de_hoje", "atualizacao_estado", "proximo_passo"],
+  "guardrails_l4": [
+    "validacao de schema/formatacao",
+    "checagem de numeros e fontes",
+    "checagem de licencas (docs/03 e docs/04)",
+    "checagem de LGPD (docs/10)",
+    "estimativa e teto de custo",
+    "3 perguntas de teste do usuario final"
+  ],
+  "referencias_bvc": {
+    "fundamentos": ["docs/00-COMECE-AQUI.md", "docs/01-MODELOS-DE-RENDA.md", "docs/02-PRODUTO-E-VALIDACAO.md"],
+    "catalogos": ["docs/03-BIBLIA-GITHUB.md", "docs/04-BIBLIA-HUGGINGFACE.md"],
+    "execucao": ["docs/05-AGENTES-E-AUTOMACAO.md", "docs/06-X-E-REDDIT.md", "docs/07-VENDAS-PRECO-E-PAGAMENTO.md", "docs/08-OPERACAO-E-METRICAS.md", "docs/09-ROADMAP-90-DIAS.md"],
+    "risco": ["docs/10-JURIDICO-E-FINANCEIRO-BR.md", "docs/14-ANTI-BURRO.md"],
+    "templates": ["templates/"],
+    "scripts": ["scripts/novo_micro_saas.py", "scripts/master_orchestrator.py", "scripts/calcular_unidade.py"]
+  }
+}

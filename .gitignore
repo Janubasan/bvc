@@ -1,0 +1,15 @@
+# saída gerada pelo usuário (não versionar)
+projetos/*
+!projetos/.gitkeep
+*.spec.yaml
+
+# segredos
+.env
+.env.*
+!.env.example
+
+# lixo
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
