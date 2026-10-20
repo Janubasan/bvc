@@ -195,12 +195,13 @@ export function Integracoes() {
             />
 
             <TestButton
-              label="Enviar WhatsApp teste →"
+              label="Enviar WhatsApp teste → seu +55 62 99902-3474"
               onClick={async () => {
-                const r = await fetch("/api/evolution", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "sendText", serverUrl: evoUrl || undefined, apiKey: evoKey || undefined, instanceName: evoInstance, number: "5562999999999", text: "Oi! Aqui é BVC MCMV Goiá — teste de integração Evolution API ✅" }) });
+                const r = await fetch("/api/evolution", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ action: "sendText", serverUrl: evoUrl || undefined, apiKey: evoKey || undefined, instanceName: evoInstance, number: "5562999023474", text: "Oi! Aqui é BVC MCMV Goiá — teste de integração Evolution API ✅" }) });
                 return await r.json();
               }}
             />
+            <div className="text-[11px] text-violet-600 bg-violet-50 border border-violet-200 rounded-lg px-2 py-1.5">✓ Teste vai para <b>+55 62 99902-3474</b> (seu zap de disparo). Troque em /api/evolution se quiser outro.</div>
 
             <div className="flex gap-2 flex-wrap">
               <a href="https://doc.evolution-api.com" target="_blank"><Button size="sm" variant="outline"><ExternalLink className="h-4 w-4 mr-1" /> Docs Evolution</Button></a>

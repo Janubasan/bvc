@@ -4,7 +4,7 @@ import { MRV_EMPREENDIMENTOS } from "@/lib/data-mrv";
 
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
-  const { numeroTeste = "5562999999999", modo = "teste", predios = ["all"] } = body;
+  const { numeroTeste = "5562999023474", modo = "teste", predios = ["all"] } = body;
 
   const targets = predios.includes("all") ? MRV_EMPREENDIMENTOS : MRV_EMPREENDIMENTOS.filter(e => predios.includes(e.id) || predios.includes(e.nome));
   const leads = gerarDisparoTeste(numeroTeste).filter(l => predios.includes("all") || predios.includes(l.empreendimentoId) || predios.includes(l.empreendimentoNome));
@@ -73,7 +73,7 @@ export async function POST(req: Request) {
     aviso: modo === "teste"
       ? "MODO TESTE: nada enviado de verdade. Revise mensagens + Sheets preview e clique 'Disparar de verdade' quando aprovar."
       : "MODO ENVIO: sandbox bloqueia api.evolution.com — em produção (VPS/Vercel) envia de verdade via Evolution API.",
-    nextAction: modo === "teste" ? "POST /api/disparo { modo:'enviar', numeroTeste:'5562912345678', predios:['all'] }" : "Verifique Evolution /manager → Messages",
+    nextAction: modo === "teste" ? "POST /api/disparo { modo:'enviar', numeroTeste:'5562999023474', predios:['all'] }" : "Verifique Evolution /manager → Messages",
   });
 }
 
@@ -82,13 +82,13 @@ export async function GET() {
     status: "Disparo MRV 8 prédios • Primeiro teste",
     endpoint: "POST /api/disparo",
     body: {
-      numeroTeste: "5562912345678 (seu WhatsApp p/ teste)",
+      numeroTeste: "5562999023474 (seu WhatsApp - todos 8 vão para este número no modo teste)",
       modo: "teste | enviar",
       predios: ["all"] // ou ["Gran Porto","Gran Safira", "mrv-go-04"]
     },
     exemplo: {
-      teste: `curl -X POST http://localhost:3000/api/disparo -H "Content-Type: application/json" -d '{"numeroTeste":"556291112233","modo":"teste","predios":["all"]}'`,
-      enviar: `curl -X POST http://localhost:3000/api/disparo -H "Content-Type: application/json" -d '{"numeroTeste":"556291112233","modo":"enviar"}'`,
+      teste: `curl -X POST http://localhost:3000/api/disparo -H "Content-Type: application/json" -d '{"numeroTeste":"5562999023474","modo":"teste","predios":["all"]}'`,
+      enviar: `curl -X POST http://localhost:3000/api/disparo -H "Content-Type: application/json" -d '{"numeroTeste":"5562999023474","modo":"enviar"}'`,
     },
     notas: [
       "Modo teste = preview completo sem enviar WhatsApp",

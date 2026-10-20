@@ -1,6 +1,7 @@
 // Disparo engine — 8 prédios MRV, 1 lead teste por prédio, mensagem validada + 420x FGTS
 import { MRV_EMPREENDIMENTOS } from "./data-mrv";
 import { LEADS_MOCK, Lead } from "./data";
+import { USER_CONFIG } from "./config";
 
 export type DisparoLead = Lead & {
   empreendimentoId: string;
@@ -15,7 +16,7 @@ export function gerarMensagemMRV(emp: typeof MRV_EMPREENDIMENTOS[0], nome = "{{n
   return `Oi ${nome}! 👋 MRV ${emp.nome} (${emp.cidade} — ${emp.bairro}) — ${emp.metragemTexto} ${emp.varanda.toLowerCase()}, entrega ${emp.entrega}. Financie em até 420 meses, use seu FGTS, menores taxas, seu 1º apê! Posso te mandar a planta ${emp.metragemTexto} e a simulação 420x com FGTS em 1 min?`;
 }
 
-export function gerarDisparoTeste(numeroTeste?: string): DisparoLead[] {
+export function gerarDisparoTeste(numeroTeste: string = USER_CONFIG.zap): DisparoLead[] {
   const nomes = ["Ana Paula", "Carlos Eduardo", "Juliana", "Roberto", "Fernanda", "Marcos", "Patrícia", "Diego"];
   return MRV_EMPREENDIMENTOS.map((emp, idx) => {
     const base = LEADS_MOCK[idx % LEADS_MOCK.length];

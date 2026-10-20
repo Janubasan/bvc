@@ -102,8 +102,16 @@ export function SidebarContent() {
         </div>
       </nav>
 
-      <div className="p-3 border-t border-slate-800">
-        <div className="flex items-center gap-3 px-2 py-2">
+      <div className="p-3 border-t border-slate-800 space-y-2">
+        <div className="flex items-center gap-2 bg-green-900/50 border border-green-700 rounded-xl px-3 py-2.5">
+          <div className="h-7 w-7 rounded-full bg-green-500 flex items-center justify-center text-[11px] font-black">WA</div>
+          <div className="flex-1 min-w-0">
+            <div className="text-xs font-bold leading-none">Seu WhatsApp</div>
+            <div className="text-xs text-green-300 font-mono">+55 62 99902-3474</div>
+          </div>
+          <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse" />
+        </div>
+        <div className="flex items-center gap-3 px-2 py-1.5">
           <img src="https://i.pravatar.cc/100?img=15" className="h-8 w-8 rounded-full" alt="" />
           <div className="flex-1 min-w-0">
             <div className="text-sm font-medium leading-none">Corretor MCMV</div>

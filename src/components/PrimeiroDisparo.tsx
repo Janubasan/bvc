@@ -5,9 +5,10 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { MRV_EMPREENDIMENTOS } from "@/lib/data-mrv";
 import { Send, Play, Check, Eye, AlertTriangle, ExternalLink, Download, Clock, MessageSquare, Sheet, FileSpreadsheet, Bug, Sparkles, Rocket } from "lucide-react";
+import { USER_CONFIG } from "@/lib/config";
 
 export function PrimeiroDisparo() {
-  const [numero, setNumero] = useState("5562999999999");
+  const [numero, setNumero] = useState<string>(USER_CONFIG.zap);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [modo, setModo] = useState<"teste"|"enviar">("teste");
