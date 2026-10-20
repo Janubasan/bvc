@@ -57,14 +57,14 @@ export function Harness() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-xl font-bold flex items-center gap-2" style={{ fontFamily: "Sora" }}><GitBranch className="h-5 w-5 text-teal-600" /> Harness Agêntico — estilo n8n, auto-hospedado</h2>
-          <p className="text-sm text-slate-500">Arraste nós, conecte gatilhos, defina regras de Faixa. Clone do n8n (160k★) + Apify + Google. 100% auditável.</p>
+          <p className="text-sm text-slate-500">Setup: Aparecida + 6 fluxos Goiânia sistematizados. Cada empreendimento = pipeline isolado (aba Sheets + template WhatsApp).</p>
         </div>
         <div className="flex gap-2">
           <Button variant={workflowRunning ? "secondary" : "accent"} onClick={() => setWorkflowRunning(!workflowRunning)}>
             {workflowRunning ? <><Pause className="h-4 w-4 mr-2" /> Pausar</> : <><Play className="h-4 w-4 mr-2" /> Ativar</>}
           </Button>
-          <Button variant="outline"><Copy className="h-4 w-4 mr-2" /> Duplicar workflow</Button>
-          <Button variant="ghost"><ExternalLink className="h-4 w-4 mr-2" /> Exportar JSON n8n</Button>
+          <Button variant="outline"><Copy className="h-4 w-4 mr-2" /> Duplicar</Button>
+          <Button variant="ghost"><ExternalLink className="h-4 w-4 mr-2" /> Exportar JSON</Button>
         </div>
       </div>
 
@@ -72,8 +72,8 @@ export function Harness() {
       <Card className="overflow-hidden">
         <CardHeader className="flex flex-row items-center justify-between bg-slate-50 border-b">
           <CardTitle className="text-sm flex items-center gap-2">
-            <span className="h-2 w-2 bg-emerald-500 rounded-full animate-pulse" /> Workflow: MCMV Aparecida — Instagram → Sheets → WhatsApp
-            <Badge variant="secondary" className="ml-2">v1.4 • 6.2k execuções/dia</Badge>
+            <span className="h-2 w-2 bg-emerald-500 rounded-full animate-pulse" /> Workflow: MCMV Goiânia & Aparecida — 6+1 pipelines ativos
+            <Badge variant="secondary" className="ml-2">v2.0 • 6.2k exec/dia • sistematizado Go</Badge>
           </CardTitle>
           <div className="flex items-center gap-2">
             <Button size="sm" variant="outline"><Plus className="h-4 w-4 mr-1" /> Adicionar nó</Button>

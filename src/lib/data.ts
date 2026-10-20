@@ -50,6 +50,204 @@ export const BAIRROS_FOCO = [
   { nome: "Real Conquista", cidade: "Aparecida", estoque: 150, ticket: 175000, demanda: "média" },
 ];
 
+// === SISTEMATIZAÇÃO GOIÂNIA — 6 OPÇÕES MCMV (2026) ===
+export type EmpreendimentoGo = {
+  id: string;
+  nome: string;
+  bairro: string;
+  regiao: string;
+  cidade: "Goiânia" | "Aparecida de Goiânia";
+  construtora: string;
+  instagram: string;
+  faixa: ("Faixa 1" | "Faixa 2" | "Faixa 3" | "Faixa 4")[];
+  unidades: number;
+  ticketDesde: number;
+  ticketAte: number;
+  tipologia: string;
+  status: "lançamento" | "em obras" | "pronto" | "venda" | "breve";
+  entrega: string;
+  destaque: string;
+  leads: number;
+  conversao: number;
+  estoquePct: number; // 0-100 vendido
+  tourUrl?: string;
+  cor: string;
+};
+
+export const EMPREENDIMENTOS_GOIANIA: EmpreendimentoGo[] = [
+  {
+    id: "go-01",
+    nome: "FR Viva Goiá",
+    bairro: "Bairro Goiá",
+    regiao: "Noroeste",
+    cidade: "Goiânia",
+    construtora: "FR Incorporadora",
+    instagram: "@frincorporadora",
+    faixa: ["Faixa 2"],
+    unidades: 304,
+    ticketDesde: 270000,
+    ticketAte: 310000,
+    tipologia: "2Q c/ varanda • 44m²",
+    status: "lançamento",
+    entrega: "Dez 2028 (2 torres, 19 pav)",
+    destaque: "Na Av. Leste-Oeste • 8 aptos/andar • lazer completo",
+    leads: 342,
+    conversao: 22.4,
+    estoquePct: 41,
+    cor: "bg-teal-600",
+  },
+  {
+    id: "go-02",
+    nome: "Residencial 14 Bis 01 & 02",
+    bairro: "Faiçalville / 14 Bis",
+    regiao: "Sudoeste",
+    cidade: "Goiânia",
+    construtora: "Plano&Plano + Direcional",
+    instagram: "@planoeplanogo",
+    faixa: ["Faixa 1", "Faixa 2"],
+    unidades: 412,
+    ticketDesde: 185000,
+    ticketAte: 245000,
+    tipologia: "2Q • 41-45m² • FAR",
+    status: "em obras",
+    entrega: "Mar 2027",
+    destaque: "Próx. Parques Macambira/Cascavel • corredor transporte",
+    leads: 278,
+    conversao: 18.9,
+    estoquePct: 58,
+    cor: "bg-orange-500",
+  },
+  {
+    id: "go-03",
+    nome: "Casamérica Parque Cascavel",
+    bairro: "Parque Amazônia",
+    regiao: "Sul",
+    cidade: "Goiânia",
+    construtora: "CMO Construtora",
+    instagram: "@cmoconstrutora",
+    faixa: ["Faixa 2", "Faixa 3"],
+    unidades: 260,
+    ticketDesde: 335000,
+    ticketAte: 396000,
+    tipologia: "2Q • 47m² • varanda",
+    status: "lançamento",
+    entrega: "Set 2028",
+    destaque: "R. Niterói 122 • menor preço CMO • MCMV com lazer",
+    leads: 198,
+    conversao: 16.2,
+    estoquePct: 33,
+    cor: "bg-emerald-600",
+  },
+  {
+    id: "go-04",
+    nome: "Now Laguna",
+    bairro: "Parque Amazônia / Laguna",
+    regiao: "Sul",
+    cidade: "Goiânia",
+    construtora: "EBM Incorporações",
+    instagram: "@ebmgoiania",
+    faixa: ["Faixa 2", "Faixa 3"],
+    unidades: 224,
+    ticketDesde: 335000,
+    ticketAte: 390000,
+    tipologia: "2-3Q • 50-68m²",
+    status: "venda",
+    entrega: "Mar 2026 (pronto!)",
+    destaque: "Av. Laguna • já em venda • pronto p/ morar",
+    leads: 412,
+    conversao: 24.1,
+    estoquePct: 67,
+    cor: "bg-indigo-600",
+  },
+  {
+    id: "go-05",
+    nome: "Gran Paradiso — Gran Vitória",
+    bairro: "Santa Rita / Gran Vitória",
+    regiao: "Leste",
+    cidade: "Goiânia",
+    construtora: "MRV Engenharia",
+    instagram: "@mrvmrv_goiania",
+    faixa: ["Faixa 2", "Faixa 3"],
+    unidades: 388,
+    ticketDesde: 258000,
+    ticketAte: 315000,
+    tipologia: "2Q • 42m² • 62mil m² área",
+    status: "venda",
+    entrega: "Jun 2027",
+    destaque: "Maior complexo MRV Goiânia • 2Q + lazer (piscina, quadra)",
+    leads: 521,
+    conversao: 19.8,
+    estoquePct: 71,
+    cor: "bg-sky-600",
+  },
+  {
+    id: "go-06",
+    nome: "Now Milão + Faiçalville Premium",
+    bairro: "Eldorado / Faiçalville",
+    regiao: "Sudoeste",
+    cidade: "Goiânia",
+    construtora: "EBM / Plano&Plano",
+    instagram: "@ebmgoiania",
+    faixa: ["Faixa 3", "Faixa 4"],
+    unidades: 196,
+    ticketDesde: 390000,
+    ticketAte: 495000,
+    tipologia: "2-3Q • 55-72m² • Faixa 4 até R$600k",
+    status: "breve",
+    entrega: "Ago 2026 (Fase 1)",
+    destaque: "Ao lado Bairro Eldorado • teto Faixa 4 R$600k • 3Q em bairro nobre",
+    leads: 156,
+    conversao: 14.5,
+    estoquePct: 12,
+    cor: "bg-violet-600",
+  },
+];
+
+export const EMPREENDIMENTOS_APARECIDA: EmpreendimentoGo[] = [
+  {
+    id: "ap-01",
+    nome: "Alto da Boa Vista I, II e III",
+    bairro: "Alto da Boa Vista",
+    regiao: "Centro Aparecida",
+    cidade: "Aparecida de Goiânia",
+    construtora: "Dinâmica / Vega",
+    instagram: "@vegaincorporacoes",
+    faixa: ["Faixa 1"],
+    unidades: 768,
+    ticketDesde: 185000,
+    ticketAte: 210000,
+    tipologia: "2Q 44m² c/ varanda • biblioteca",
+    status: "em obras",
+    entrega: "2026-27 (FAR)",
+    destaque: "768 Apês a Custo Zero • Portaria 725/23 • Agehab/Caixa",
+    leads: 847,
+    conversao: 26.3,
+    estoquePct: 70,
+    cor: "bg-teal-600",
+  },
+  {
+    id: "ap-02",
+    nome: "Vila Romana",
+    bairro: "Vila Romana",
+    regiao: "Aparecida Oeste",
+    cidade: "Aparecida de Goiânia",
+    construtora: "Dinâmica Engenharia",
+    instagram: "@dinamicaengenharia",
+    faixa: ["Faixa 1"],
+    unidades: 210,
+    ticketDesde: 195000,
+    ticketAte: 225000,
+    tipologia: "2Q • entrega 2026",
+    status: "em obras",
+    entrega: "2026",
+    destaque: "Lista compatíveis Agehab mar/2026 • docs 26/03",
+    leads: 203,
+    conversao: 21.1,
+    estoquePct: 45,
+    cor: "bg-amber-600",
+  },
+];
+
 export const LEADS_MOCK: Lead[] = [
   { id: "L-001", nome: "Ana Paula Souza", telefone: "62991234567", email: "ana.souza@gmail.com", instagram: "@anapsouza.go", origem: "instagram", score: 92, faixa: "Faixa 2", rendaEstimada: 3800, bairroInteresse: "Alto da Boa Vista", cidade: "Aparecida de Goiânia", interesse: "Apto 2q c/ varanda, FGTS", status: "qualificado", avatar: "AS", createdAt: "2026-10-19T14:00:00Z", intentSignals: ["comentou 'valores?' em post MRV", "buscou 'FGTS entrada MCMV'", "salvou 12 imóveis"], construtoraAlvo: "MRV Engenharia" },
   { id: "L-002", nome: "Carlos Eduardo Lima", telefone: "62992345678", instagram: "@carlosedu.lima", origem: "facebook_grupo", score: 87, faixa: "Faixa 1", rendaEstimada: 2100, bairroInteresse: "Vila Romana", cidade: "Aparecida de Goiânia", interesse: "Apê a Custo Zero - cadastro", status: "novo", avatar: "CL", createdAt: "2026-10-19T10:30:00Z", intentSignals: ["entrou grupo 'MCMV Aparecida 2026'", "perguntou sobre documentação Agehab"], construtoraAlvo: "Dinâmica Engenharia" },

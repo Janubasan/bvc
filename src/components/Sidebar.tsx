@@ -14,16 +14,20 @@ import {
   MapPinned,
   ShieldCheck,
   Zap,
+  Building2,
+  Plug,
 } from "lucide-react";
 
 const NAV = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, badge: null },
+  { id: "goiania", label: "Goiânia — 6 Opções", icon: Building2, badge: "SISTEMATIZADO" },
   { id: "prospectar", label: "Prospectar", icon: SearchIcon, badge: "NOVO" },
-  { id: "agentes", label: "Agentes IA", icon: Bot, badge: "4 ativos" },
   { id: "harness", label: "Harness (n8n)", icon: GitBranch, badge: "● ao vivo" },
-  { id: "mensagens", label: "Mensagens", icon: MessageSquare, badge: "12" },
+  { id: "integracoes", label: "Integrações", icon: Plug, badge: "3 APIs" },
   { id: "leads", label: "Leads & CRM", icon: Sheet, badge: "1.847" },
+  { id: "mensagens", label: "Mensagens", icon: MessageSquare, badge: "12" },
   { id: "docs", label: "Docs & Sheets", icon: FileText, badge: null },
+  { id: "agentes", label: "Agentes IA", icon: Bot, badge: "4 ativos" },
 ];
 
 export function SidebarContent() {

@@ -9,6 +9,8 @@ import { Mensagens } from "@/components/Mensagens";
 import { Docs } from "@/components/Docs";
 import { Agentes } from "@/components/Agentes";
 import { Estudos } from "@/components/Estudos";
+import { GoianiaSistematizada } from "@/components/Goiânia";
+import { Integracoes } from "@/components/Integracoes";
 import { useStore } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
@@ -21,9 +23,11 @@ export default function Page() {
   const render = () => {
     switch (activeTab) {
       case "dashboard": return <Dashboard />;
+      case "goiania": return <GoianiaSistematizada />;
       case "prospectar": return <Prospector />;
       case "agentes": return <Agentes />;
       case "harness": return <Harness />;
+      case "integracoes": return <Integracoes />;
       case "mensagens": return <Mensagens />;
       case "leads": return <Leads />;
       case "docs": return <Docs />;

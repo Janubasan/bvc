@@ -42,17 +42,17 @@ export function Dashboard() {
               O prospector MCMV mais avançado do Brasil. <span className="text-teal-300">Pronto para captar e fechar.</span>
             </h1>
             <p className="mt-3 text-sm text-slate-300 max-w-2xl leading-relaxed">
-              Inspirado no melhor do mundo (n8n 160k★, Scout, OpenOutreach, CrewAI) e adaptado para o <b>Minha Casa Minha Vida em Goiânia/Aparecida</b>: 768 apês Faixa 1 no Alto da Boa Vista, ticket R$185-258k, parcela menor que aluguel. Instagram de construtoras + sinais de finança/moradia → qualificação IA → entrega automática em Google Sheets & Docs.
+              Inspirado no melhor do mundo (n8n 160k★, Scout, OpenOutreach, CrewAI) e adaptado para o <b>Minha Casa Minha Vida em Goiânia & Aparecida</b>: 6 opções sistematizadas em Goiânia (FR Viva Goiá R$270k, 14 Bis, Parque Amazônia) + 768 apês Alto da Boa Vista (Aparecida). Instagram construtoras + sinais finança/moradia → qualificação IA → entrega automática Google Sheets & Docs.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <Button variant="accent" onClick={() => { setProspectingRunning(true); setActiveTab("prospectar"); }}>
-                <Play className="h-4 w-4 mr-2" /> Iniciar prospecção agora
+              <Button variant="accent" onClick={() => { setActiveTab("goiania"); }}>
+                <Home className="h-4 w-4 mr-2" /> Ver 6 opções Goiânia
               </Button>
-              <Button variant="outline" className="bg-white text-slate-900 hover:bg-slate-100" onClick={() => setActiveTab("harness")}>
-                Ver Harness n8n-style →
+              <Button variant="outline" className="bg-white text-slate-900 hover:bg-slate-100" onClick={() => { setProspectingRunning(true); setActiveTab("prospectar"); }}>
+                <Play className="h-4 w-4 mr-2" /> Iniciar prospecção
               </Button>
-              <Button variant="ghost" className="text-white hover:bg-white/10 border border-white/20" onClick={() => window.open("https://aparecida.go.gov.br", "_blank")}>
-                <ExternalLink className="h-4 w-4 mr-2" /> Edital Aparecida 768
+              <Button variant="ghost" className="text-white hover:bg-white/10 border border-white/20" onClick={() => setActiveTab("integracoes")}>
+                Conectar Apify/Google/Evolution →
               </Button>
             </div>
           </div>
