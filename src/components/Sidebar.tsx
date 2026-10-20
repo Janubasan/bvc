@@ -17,10 +17,12 @@ import {
   Building2,
   Plug,
   FileSpreadsheet,
+  Rocket,
 } from "lucide-react";
 
 const NAV = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, badge: null },
+  { id: "disparo", label: "Primeiro Disparo", icon: Rocket, badge: "AO VIVO" },
   { id: "goiania", label: "MRV — 8 Prédios", icon: Building2, badge: "EXCLUSIVO MRV" },
   { id: "prospectar", label: "Prospectar MRV", icon: SearchIcon, badge: "MRV" },
   { id: "harness", label: "Harness (n8n)", icon: GitBranch, badge: "8 fluxos" },
