@@ -20,12 +20,12 @@ import {
 
 const NAV = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, badge: null },
-  { id: "goiania", label: "Goiânia — 6 Opções", icon: Building2, badge: "SISTEMATIZADO" },
-  { id: "prospectar", label: "Prospectar", icon: SearchIcon, badge: "NOVO" },
-  { id: "harness", label: "Harness (n8n)", icon: GitBranch, badge: "● ao vivo" },
+  { id: "goiania", label: "MRV — 8 Prédios", icon: Building2, badge: "EXCLUSIVO MRV" },
+  { id: "prospectar", label: "Prospectar MRV", icon: SearchIcon, badge: "MRV" },
+  { id: "harness", label: "Harness (n8n)", icon: GitBranch, badge: "8 fluxos" },
   { id: "integracoes", label: "Integrações", icon: Plug, badge: "3 APIs" },
   { id: "leads", label: "Leads & CRM", icon: Sheet, badge: "1.847" },
-  { id: "mensagens", label: "Mensagens", icon: MessageSquare, badge: "12" },
+  { id: "mensagens", label: "Mensagens MRV", icon: MessageSquare, badge: "8 validadas" },
   { id: "docs", label: "Docs & Sheets", icon: FileText, badge: null },
   { id: "agentes", label: "Agentes IA", icon: Bot, badge: "4 ativos" },
 ];
@@ -44,9 +44,9 @@ export function SidebarContent() {
             <div className="text-[11px] text-slate-400">MCMV • Goiânia & Aparecida</div>
           </div>
         </div>
-        <div className="mt-4 flex items-center gap-2 text-[11px] bg-slate-800 rounded-lg px-2.5 py-2">
-          <MapPinned className="h-3.5 w-3.5 text-teal-400" />
-          <span>768 unidades Faixa 1 • Alto da Boa Vista</span>
+        <div className="mt-4 flex items-center gap-2 text-[11px] bg-green-900/50 border border-green-700 rounded-lg px-2.5 py-2">
+          <MapPinned className="h-3.5 w-3.5 text-green-400" />
+          <span>8 prédios MRV • Gran Porto Set/2027</span>
         </div>
       </div>
 

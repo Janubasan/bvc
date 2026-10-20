@@ -3,8 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { KPIS, BAIRROS_FOCO, CONSTRUTORAS_MCMV_GO, INTENT_KEYWORDS } from "@/lib/data";
+import { MRV_EMPREENDIMENTOS, MRV_KPIS, MRV_FINANCIAMENTO } from "@/lib/data-mrv";
 import { useStore } from "@/lib/store";
-import { ArrowUpRight, TrendingUp, Users, Target, Wallet, Home, Instagram, MapPin, Sparkles, Play, Download, ExternalLink, AlertTriangle, Clock, Filter } from "lucide-react";
+import { ArrowUpRight, TrendingUp, Users, Target, Wallet, Home, Instagram, MapPin, Sparkles, Play, Download, ExternalLink, AlertTriangle, Clock, Filter, Calendar, Building2 } from "lucide-react";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts";
 
 const chartData = [
@@ -30,29 +31,29 @@ export function Dashboard() {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="rounded-[20px] bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900 text-white p-6 md:p-8 relative overflow-hidden">
-        <div className="absolute -right-10 -top-10 h-64 w-64 bg-teal-500/20 rounded-full blur-3xl" />
-        <div className="absolute -left-10 -bottom-10 h-48 w-48 bg-orange-500/20 rounded-full blur-3xl" />
+      <div className="rounded-[20px] bg-gradient-to-br from-green-800 via-emerald-800 to-teal-900 text-white p-6 md:p-8 relative overflow-hidden">
+        <div className="absolute -right-10 -top-10 h-64 w-64 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute -left-10 -bottom-10 h-48 w-48 bg-amber-400/20 rounded-full blur-3xl" />
         <div className="relative flex flex-col lg:flex-row gap-6">
           <div className="flex-1">
-            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/10 rounded-full px-3 py-1 text-xs">
-              <span className="h-2 w-2 bg-emerald-400 rounded-full animate-pulse" /> Sistema agêntico ao vivo • Goiânia & Aparecida de Goiânia
+            <div className="inline-flex items-center gap-2 bg-white text-green-800 rounded-full px-3 py-1 text-xs font-bold">
+              <span className="h-2 w-2 bg-green-600 rounded-full animate-pulse" /> MRV ENGENHARIA • 8 PRÉDIOS EXCLUSIVOS • SISTEMA AO VIVO
             </div>
             <h1 className="mt-4 text-2xl md:text-3xl font-extrabold leading-tight" style={{ fontFamily: "Sora" }}>
-              O prospector MCMV mais avançado do Brasil. <span className="text-teal-300">Pronto para captar e fechar.</span>
+              Só MRV. 8 prédios validados. <span className="text-emerald-200">Aberturas prontas p/ disparar.</span>
             </h1>
-            <p className="mt-3 text-sm text-slate-300 max-w-2xl leading-relaxed">
-              Inspirado no melhor do mundo (n8n 160k★, Scout, OpenOutreach, CrewAI) e adaptado para o <b>Minha Casa Minha Vida em Goiânia & Aparecida</b>: 6 opções sistematizadas em Goiânia (FR Viva Goiá R$270k, 14 Bis, Parque Amazônia) + 768 apês Alto da Boa Vista (Aparecida). Instagram construtoras + sinais finança/moradia → qualificação IA → entrega automática Google Sheets & Docs.
+            <p className="mt-3 text-sm text-emerald-50 max-w-2xl leading-relaxed">
+              Sistematizado <b>exclusivamente nos 8 MRV</b>: Aparecida (Gran Safira Ago/2029 41-45m², Gran Essence Out/2028 41,35-43,86m², Gran Parma Jun/2029 41,35-47,60m² c/ varanda ampla) + Goiânia (Gran Terrazo Set/2029 39m², Priville Dez/2028 39,30-43,05m², Gran Aurora Jan/2029 39,30m², Gran Porto Set/2027 37,28-49,35m², Vert Mar/2029 38,38-45,19m²). Instagram MRV + intent FGTS/420x → qualificação IA → Sheets/Docs por prédio + mensagem validada.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Button variant="accent" onClick={() => { setActiveTab("goiania"); }}>
-                <Home className="h-4 w-4 mr-2" /> Ver 6 opções Goiânia
+                <Home className="h-4 w-4 mr-2" /> Ver 8 prédios MRV
               </Button>
-              <Button variant="outline" className="bg-white text-slate-900 hover:bg-slate-100" onClick={() => { setProspectingRunning(true); setActiveTab("prospectar"); }}>
-                <Play className="h-4 w-4 mr-2" /> Iniciar prospecção
+              <Button variant="outline" className="bg-white text-green-800 hover:bg-emerald-50" onClick={() => { setActiveTab("mensagens"); }}>
+                <Calendar className="h-4 w-4 mr-2" /> Aberturas validadas
               </Button>
               <Button variant="ghost" className="text-white hover:bg-white/10 border border-white/20" onClick={() => setActiveTab("integracoes")}>
-                Conectar Apify/Google/Evolution →
+                Conectar APIs →
               </Button>
             </div>
           </div>
@@ -159,45 +160,28 @@ export function Dashboard() {
         </Card>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2"><Home className="h-4 w-4" /> Bairros foco • Aparecida & Goiânia</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            {BAIRROS_FOCO.map((b) => (
-              <div key={b.nome} className="flex items-center justify-between p-3 rounded-xl border bg-slate-50/50 hover:bg-white transition">
-                <div>
-                  <div className="text-sm font-semibold">{b.nome} • {b.cidade}</div>
-                  <div className="text-xs text-slate-500">Ticket {new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(b.ticket)} • {b.estoque} unid. estoque</div>
-                </div>
-                <Badge variant={b.demanda === "altíssima" ? "success" : b.demanda === "alta" ? "warning" : "secondary"}>{b.demanda}</Badge>
+      <Card>
+        <CardHeader className="flex flex-row items-center justify-between">
+          <CardTitle className="flex items-center gap-2"><Building2 className="h-4 w-4 text-green-600" /> 8 Prédios MRV — Entrega + Metragem + Varanda</CardTitle>
+          <Button size="sm" variant="outline" onClick={() => setActiveTab("goiania")}>Ver detalhes →</Button>
+        </CardHeader>
+        <CardContent className="grid md:grid-cols-2 gap-3">
+          {MRV_EMPREENDIMENTOS.slice(0, 4).map((e) => (
+            <div key={e.id} className="flex items-center justify-between p-3 rounded-xl border bg-white hover:bg-slate-50">
+              <div>
+                <div className="text-sm font-bold">{e.nome} • {e.cidade.includes("Aparecida") ? "Aparecida" : "Goiânia"}</div>
+                <div className="text-xs text-slate-500">{e.entrega} • {e.metragemTexto} • {e.varanda.slice(0, 28)}</div>
+                <div className="text-[11px] text-green-700 font-medium">{e.financiamento}</div>
               </div>
-            ))}
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2"><Instagram className="h-4 w-4 text-pink-500" /> Construtoras MCMV monitoradas</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            {CONSTRUTORAS_MCMV_GO.slice(0, 6).map((c) => (
-              <div key={c.id} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200">
-                <div className="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm">{c.avatar}</div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium leading-none">{c.nome}</div>
-                  <div className="text-xs text-slate-500">{c.instagram} • {c.foco}</div>
-                </div>
-                <div className="text-xs font-semibold text-slate-700">{(c.seguidores / 1000).toFixed(1)}k</div>
-              </div>
-            ))}
-            <div className="pt-2 text-xs text-slate-500 bg-amber-50 border border-amber-200 rounded-xl p-2.5">
-              <b>Dica de ouro:</b> Aparecida registra 25,1 contratações MCMV / mil hab. em Águas Lindas vs Goiânia estagnada — foque interior + Entorno.
+              <Badge className={`${e.cor} text-white`}>{e.estoquePct}%</Badge>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          ))}
+          <div className="md:col-span-2 text-xs text-slate-500 bg-green-50 border border-green-200 rounded-xl p-2.5 flex items-center justify-between">
+            <span><b>MRV exclusivo:</b> Gran Porto é o mais próximo (Set/2027, 37,28-49,35m² c/ varanda até 49,35) — foque nele p/ quem quer morar logo.</span>
+            <Badge variant="success">+4 prédios →</Badge>
+          </div>
+        </CardContent>
+      </Card>
 
       <Card className="border-teal-200 bg-gradient-to-br from-teal-50 to-white">
         <CardHeader>

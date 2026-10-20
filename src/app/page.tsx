@@ -6,10 +6,11 @@ import { Prospector } from "@/components/Prospector";
 import { Harness } from "@/components/Harness";
 import { Leads } from "@/components/Leads";
 import { Mensagens } from "@/components/Mensagens";
+import { MRVMensagens } from "@/components/MRVMensagens";
 import { Docs } from "@/components/Docs";
 import { Agentes } from "@/components/Agentes";
 import { Estudos } from "@/components/Estudos";
-import { GoianiaSistematizada } from "@/components/Goiânia";
+import { MRVSystem } from "@/components/MRVSystem";
 import { Integracoes } from "@/components/Integracoes";
 import { useStore } from "@/lib/store";
 import { Button } from "@/components/ui/button";
@@ -23,12 +24,13 @@ export default function Page() {
   const render = () => {
     switch (activeTab) {
       case "dashboard": return <Dashboard />;
-      case "goiania": return <GoianiaSistematizada />;
+      case "goiania": return <MRVSystem />;
       case "prospectar": return <Prospector />;
       case "agentes": return <Agentes />;
       case "harness": return <Harness />;
       case "integracoes": return <Integracoes />;
-      case "mensagens": return <Mensagens />;
+      case "mensagens": return <MRVMensagens />;
+      case "mensagens-antigas": return <Mensagens />;
       case "leads": return <Leads />;
       case "docs": return <Docs />;
       case "estudos": return <Estudos />;

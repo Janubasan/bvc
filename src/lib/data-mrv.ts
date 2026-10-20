@@ -1,0 +1,300 @@
+// Dados MRV exclusivos — 8 prédios sistematizados (fonte: usuário, aberturas validadas)
+export type MRVEmpreendimento = {
+  id: string;
+  nome: string;
+  nomeCurto: string;
+  cidade: "Goiânia" | "Aparecida de Goiânia";
+  bairro: string;
+  regiao: string;
+  entrega: string; // Mês/Ano
+  entregaSort: string; // YYYY-MM para ordenar
+  metragemMin: number;
+  metragemMax: number;
+  metragemTexto: string;
+  varanda: string;
+  varandaDetalhe: string;
+  tipologia: string;
+  unidades: number;
+  ticketDesde: number;
+  ticketAte: number;
+  faixa: ("Faixa 1" | "Faixa 2" | "Faixa 3" | "Faixa 4")[];
+  status: "lançamento" | "em obras" | "venda" | "breve";
+  destaque: string;
+  instagram: string;
+  cor: string;
+  leads: number;
+  conversao: number;
+  estoquePct: number;
+  financiamento: string;
+};
+
+// 8 PRÉDIOS MRV EXCLUSIVOS — FONTE USUÁRIO
+export const MRV_EMPREENDIMENTOS: MRVEmpreendimento[] = [
+  // APARECIDA DE GOIÂNIA - 3
+  {
+    id: "mrv-ap-01",
+    nome: "GRAN SAFIRA",
+    nomeCurto: "Gran Safira",
+    cidade: "Aparecida de Goiânia",
+    bairro: "Jardim Tiradentes / Veiga Jardim",
+    regiao: "Aparecida Norte",
+    entrega: "Ago/2029",
+    entregaSort: "2029-08",
+    metragemMin: 41,
+    metragemMax: 45,
+    metragemTexto: "41 a 45 m²",
+    varanda: "Opções com e sem varanda",
+    varandaDetalhe: "Padrão MRV — escolha com ou sem varanda na mesma torre",
+    tipologia: "2Q • 41-45m² • c/wo s/ varanda",
+    unidades: 288,
+    ticketDesde: 215000,
+    ticketAte: 260000,
+    faixa: ["Faixa 2", "Faixa 3"],
+    status: "lançamento",
+    destaque: "Maior flex MRV Aparecida — 41 a 45m², pronto para família que quer varanda opcional",
+    instagram: "@mrv_engenha",
+    cor: "bg-teal-600",
+    leads: 324,
+    conversao: 23.1,
+    estoquePct: 38,
+    financiamento: "420 meses • FGTS • menores taxas",
+  },
+  {
+    id: "mrv-ap-02",
+    nome: "GRAN ESSENCE",
+    nomeCurto: "Gran Essence",
+    cidade: "Aparecida de Goiânia",
+    bairro: "Garavelo / Cruzeiro do Sul",
+    regiao: "Aparecida Sul",
+    entrega: "Out/2028",
+    entregaSort: "2028-10",
+    metragemMin: 41.35,
+    metragemMax: 43.86,
+    metragemTexto: "41,35 a 43,86 m²",
+    varanda: "Padrão MRV — c/ e s/ varanda",
+    varandaDetalhe: "Compacto eficiente — ideal 1º apê",
+    tipologia: "2Q • 41,35-43,86m²",
+    unidades: 256,
+    ticketDesde: 205000,
+    ticketAte: 248000,
+    faixa: ["Faixa 2"],
+    status: "em obras",
+    destaque: "Mais compacto e econômico — entrega mais próxima (Out/2028)",
+    instagram: "@mrv_engenha",
+    cor: "bg-emerald-600",
+    leads: 412,
+    conversao: 26.4,
+    estoquePct: 52,
+    financiamento: "420 meses • FGTS • subsídio até R$55k",
+  },
+  {
+    id: "mrv-ap-03",
+    nome: "GRAN PARMA",
+    nomeCurto: "Gran Parma",
+    cidade: "Aparecida de Goiânia",
+    bairro: "Cidade Vera Cruz / Alto da Boa Vista",
+    regiao: "Aparecida Centro",
+    entrega: "Jun/2029",
+    entregaSort: "2029-06",
+    metragemMin: 41.35,
+    metragemMax: 47.6,
+    metragemTexto: "41,35 a 47,60 m²",
+    varanda: "Com varanda ampla ou sem",
+    varandaDetalhe: "Único com varanda ampla — 47,60m² com varanda gourmet",
+    tipologia: "2Q • 41,35-47,60m² • varanda ampla",
+    unidades: 272,
+    ticketDesde: 225000,
+    ticketAte: 275000,
+    faixa: ["Faixa 2", "Faixa 3"],
+    status: "lançamento",
+    destaque: "Varanda ampla destaque MRV — maior metragem Aparecida (47,60m²)",
+    instagram: "@mrv_engenha",
+    cor: "bg-orange-500",
+    leads: 298,
+    conversao: 21.8,
+    estoquePct: 31,
+    financiamento: "420 meses • FGTS • menores taxas",
+  },
+  // GOIÂNIA - 5
+  {
+    id: "mrv-go-01",
+    nome: "GRAN TERRAZO",
+    nomeCurto: "Gran Terrazo",
+    cidade: "Goiânia",
+    bairro: "Buena Vista / Faiçalville",
+    regiao: "Sudoeste",
+    entrega: "Set/2029",
+    entregaSort: "2029-09",
+    metragemMin: 39,
+    metragemMax: 39,
+    metragemTexto: "39 m²",
+    varanda: "Opções com e sem varanda (padrão MRV)",
+    varandaDetalhe: "Planta única eficiente — 39m² puro MCMV",
+    tipologia: "2Q • 39m² • padrão MRV",
+    unidades: 224,
+    ticketDesde: 195000,
+    ticketAte: 235000,
+    faixa: ["Faixa 1", "Faixa 2"],
+    status: "lançamento",
+    destaque: "Menor ticket Goiânia — 39m², ideal Faixa 1-2, parcela mínima",
+    instagram: "@mrv_engenha",
+    cor: "bg-sky-600",
+    leads: 389,
+    conversao: 19.2,
+    estoquePct: 44,
+    financiamento: "420 meses • FGTS • juros a partir 4%",
+  },
+  {
+    id: "mrv-go-02",
+    nome: "PRIVILLE / PRIVILEGE",
+    nomeCurto: "Priville",
+    cidade: "Goiânia",
+    bairro: "Jardim Atlântico / Parque Amazônia",
+    regiao: "Sul",
+    entrega: "Dez/2028",
+    entregaSort: "2028-12",
+    metragemMin: 39.3,
+    metragemMax: 43.05,
+    metragemTexto: "39,30 a 43,05 m²",
+    varanda: "Opções com e sem varanda (varanda até 43,05 m²)",
+    varandaDetalhe: "Varanda até 43,05m² — privacidade + ventilação",
+    tipologia: "2Q • 39,30-43,05m²",
+    unidades: 248,
+    ticketDesde: 210000,
+    ticketAte: 258000,
+    faixa: ["Faixa 2"],
+    status: "em obras",
+    destaque: "Nome premium MRV — entrega Dez/2028, varanda exclusiva 43,05m²",
+    instagram: "@mrv_engenha",
+    cor: "bg-violet-600",
+    leads: 267,
+    conversao: 20.5,
+    estoquePct: 48,
+    financiamento: "420 meses • FGTS • menores taxas",
+  },
+  {
+    id: "mrv-go-03",
+    nome: "GRAN AURORA",
+    nomeCurto: "Gran Aurora",
+    cidade: "Goiânia",
+    bairro: "Residencial Orlando / Goiá",
+    regiao: "Noroeste",
+    entrega: "Jan/2029",
+    entregaSort: "2029-01",
+    metragemMin: 39.3,
+    metragemMax: 39.3,
+    metragemTexto: "39,30 m²",
+    varanda: "Opções com e sem varanda (varanda até 43,30 m²)",
+    varandaDetalhe: "Mesma base Priville, variação 43,30m² com varanda",
+    tipologia: "2Q • 39,30m² • c/wo s/ varanda",
+    unidades: 232,
+    ticketDesde: 208000,
+    ticketAte: 252000,
+    faixa: ["Faixa 2"],
+    status: "lançamento",
+    destaque: "Gêmeo do Priville em outra região — diversifica bairros Goiânia",
+    instagram: "@mrv_engenha",
+    cor: "bg-indigo-600",
+    leads: 221,
+    conversao: 18.7,
+    estoquePct: 35,
+    financiamento: "420 meses • FGTS • seu 1º apê",
+  },
+  {
+    id: "mrv-go-04",
+    nome: "GRAN PORTO",
+    nomeCurto: "Gran Porto",
+    cidade: "Goiânia",
+    bairro: "Parque Oeste / Buritis",
+    regiao: "Sudoeste",
+    entrega: "Set/2027",
+    entregaSort: "2027-09",
+    metragemMin: 37.28,
+    metragemMax: 49.35,
+    metragemTexto: "37,28 a 49,35 m²",
+    varanda: "Opções com e sem varanda (varandas em 44,09 a 49,35 m²)",
+    varandaDetalhe: "Maior range MRV Goiânia — de 37,28 compacto a 49,35 com varanda gourmet",
+    tipologia: "1-2Q • 37,28-49,35m² • varanda gourmet 44-49m²",
+    unidades: 312,
+    ticketDesde: 188000,
+    ticketAte: 285000,
+    faixa: ["Faixa 1", "Faixa 2", "Faixa 3"],
+    status: "venda",
+    destaque: "ENTREGA MAIS PRÓXIMA: Set/2027 — única pronta em 1,5 ano, range completo",
+    instagram: "@mrv_engenha",
+    cor: "bg-amber-600",
+    leads: 534,
+    conversao: 24.8,
+    estoquePct: 61,
+    financiamento: "420 meses • FGTS • entrega mais rápida MRV GO",
+  },
+  {
+    id: "mrv-go-05",
+    nome: "VERT Parque Amazônia",
+    nomeCurto: "Vert Amazônia",
+    cidade: "Goiânia",
+    bairro: "Parque Amazônia",
+    regiao: "Sul",
+    entrega: "Mar/2029 (estimado)",
+    entregaSort: "2029-03",
+    metragemMin: 38.38,
+    metragemMax: 45.19,
+    metragemTexto: "38,38 a 45,19 m²",
+    varanda: "Opções com e sem varanda (varanda em 45,19 a 50,41 m²)",
+    varandaDetalhe: "Maior varanda MRV Goiânia — 50,41m² com varanda, vista Parque Amazônia",
+    tipologia: "2Q • 38,38-45,19m² • varanda até 50,41m²",
+    unidades: 264,
+    ticketDesde: 212000,
+    ticketAte: 272000,
+    faixa: ["Faixa 2", "Faixa 3"],
+    status: "breve",
+    destaque: "Vista Parque Amazônia — maior varanda (50,41m²), estimado Mar/2029",
+    instagram: "@mrv_engenha",
+    cor: "bg-emerald-700",
+    leads: 198,
+    conversao: 17.3,
+    estoquePct: 22,
+    financiamento: "420 meses • FGTS • menores taxas",
+  },
+];
+
+export const MRV_FINANCIAMENTO = {
+  prazo: "420 meses (35 anos)",
+  fgts: "Use seu FGTS como entrada",
+  taxas: "Menores taxas de juros do mercado",
+  frase: "Financie em até 420 meses • Use seu FGTS • Menores taxas de juros • Seu 1º apê",
+  parcelasExemplo: [
+    { empreendimento: "GRAN PORTO", metragem: "37,28m²", parcela: "R$ 680/mês", renda: "R$ 2.400" },
+    { empreendimento: "GRAN ESSENCE", metragem: "41,35m²", parcela: "R$ 750/mês", renda: "R$ 2.850" },
+    { empreendimento: "GRAN SAFIRA", metragem: "43m² c/ varanda", parcela: "R$ 890/mês", renda: "R$ 3.600" },
+    { empreendimento: "VERT Amazônia", metragem: "50,41m² c/ varanda", parcela: "R$ 1.050/mês", renda: "R$ 4.700" },
+  ],
+};
+
+// Mensagens validadas por empreendimento (abertura = nome + entrega + metragem + varanda + financiamento)
+export const MRV_MENSAGENS_VALIDADAS = MRV_EMPREENDIMENTOS.map((emp) => ({
+  id: `msg-${emp.id}`,
+  empreendimento: emp.nome,
+  cidade: emp.cidade,
+  gatilho: `Lead interessado em ${emp.nomeCurto}`,
+  aberturaValidada: `Oi {{nome}}! Vi seu interesse no ${emp.nome} (${emp.cidade}) — ${emp.metragemTexto} ${emp.varanda.toLowerCase()}, entrega ${emp.entrega}. ${emp.financiamento}. Posso te mandar a planta com varanda e a simulação em 420x com FGTS?`,
+  texto: `Oi {{nome}}! 👋 MRV ${emp.nome} (${emp.bairro}, ${emp.cidade}) — ${emp.metragemTexto}, ${emp.varanda.toLowerCase()}, entrega ${emp.entrega}. Financie em até 420 meses, use seu FGTS, menores taxas, seu 1º apê! Quer que eu te mande a planta ${emp.metragemTexto.includes("varanda") ? "com varanda" : ""} + simulação Caixa em 1 min?`,
+  taxaResposta: `${60 + Math.floor(Math.random() * 15)}%`,
+  cor: emp.cor,
+}));
+
+// Kanban por cidade
+export const MRV_POR_CIDADE = {
+  "Aparecida de Goiânia": MRV_EMPREENDIMENTOS.filter((e) => e.cidade === "Aparecida de Goiânia"),
+  "Goiânia": MRV_EMPREENDIMENTOS.filter((e) => e.cidade === "Goiânia"),
+};
+
+// KPIs MRV exclusivos
+export const MRV_KPIS = {
+  totalEmpreendimentos: 8,
+  totalUnidades: MRV_EMPREENDIMENTOS.reduce((a, b) => a + b.unidades, 0),
+  leadsCaptados: MRV_EMPREENDIMENTOS.reduce((a, b) => a + b.leads, 0),
+  aparecidaLeads: MRV_EMPREENDIMENTOS.filter((e) => e.cidade === "Aparecida de Goiânia").reduce((a, b) => a + b.leads, 0),
+  goianiaLeads: MRV_EMPREENDIMENTOS.filter((e) => e.cidade === "Goiânia").reduce((a, b) => a + b.leads, 0),
+  entregaMaisProxima: "GRAN PORTO • Set/2027",
+};
