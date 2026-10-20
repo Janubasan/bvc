@@ -18,10 +18,12 @@ import {
   Plug,
   FileSpreadsheet,
   Rocket,
+  BadgeCheck,
 } from "lucide-react";
 
 const NAV = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, badge: null },
+  { id: "validador", label: "Validador 62", icon: BadgeCheck, badge: "6 MOTORES" },
   { id: "disparo", label: "Primeiro Disparo", icon: Rocket, badge: "AO VIVO" },
   { id: "goiania", label: "MRV — 8 Prédios", icon: Building2, badge: "EXCLUSIVO MRV" },
   { id: "prospectar", label: "Prospectar MRV", icon: SearchIcon, badge: "MRV" },
