@@ -12,6 +12,7 @@ import { Agentes } from "@/components/Agentes";
 import { Estudos } from "@/components/Estudos";
 import { MRVSystem } from "@/components/MRVSystem";
 import { Integracoes } from "@/components/Integracoes";
+import { Exportador } from "@/components/Exportador";
 import { useStore } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
@@ -28,6 +29,7 @@ export default function Page() {
       case "prospectar": return <Prospector />;
       case "agentes": return <Agentes />;
       case "harness": return <Harness />;
+      case "exportador": return <Exportador />;
       case "integracoes": return <Integracoes />;
       case "mensagens": return <MRVMensagens />;
       case "mensagens-antigas": return <Mensagens />;

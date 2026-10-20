@@ -16,6 +16,7 @@ import {
   Zap,
   Building2,
   Plug,
+  FileSpreadsheet,
 } from "lucide-react";
 
 const NAV = [
@@ -23,6 +24,7 @@ const NAV = [
   { id: "goiania", label: "MRV — 8 Prédios", icon: Building2, badge: "EXCLUSIVO MRV" },
   { id: "prospectar", label: "Prospectar MRV", icon: SearchIcon, badge: "MRV" },
   { id: "harness", label: "Harness (n8n)", icon: GitBranch, badge: "8 fluxos" },
+  { id: "exportador", label: "Exportador", icon: FileSpreadsheet, badge: "NOVO" },
   { id: "integracoes", label: "Integrações", icon: Plug, badge: "3 APIs" },
   { id: "leads", label: "Leads & CRM", icon: Sheet, badge: "1.847" },
   { id: "mensagens", label: "Mensagens MRV", icon: MessageSquare, badge: "8 validadas" },
