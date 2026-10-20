@@ -38,7 +38,7 @@ export function PrimeiroDisparo() {
           <div className="flex-1">
             <div className="inline-flex items-center gap-2 bg-white text-green-800 rounded-full px-3 py-1 text-xs font-bold"><Rocket className="h-4 w-4" /> PRIMEIRO DISPARO — 8 PRÉDIOS MRV</div>
             <h1 className="mt-3 text-2xl font-extrabold" style={{ fontFamily: "Sora" }}>Teste com 8 leads (1 por prédio) + mensagem validada</h1>
-            <p className="text-sm text-emerald-50 mt-2 leading-relaxed">Modo <b>teste</b> = preview completo sem enviar. <b>Enviar</b> = Evolution de verdade (precisa Evolution configurado; sandbox bloqueia, produção funciona). Apify token já configurado <code className="bg-white/20 px-1 rounded">apify_api_H7LP...2wkjxw</code>.</p>
+            <p className="text-sm text-emerald-50 mt-2 leading-relaxed">Modo <b>teste</b> = 8 prévias no seu zap sem enviar pra ninguém. <b>Enviar</b> = Evolution real (precisa Evolution; sandbox bloqueia, produção funciona). Apify token já configurado <code className="bg-white/20 px-1 rounded">apify_api_H7LP...2wkjxw</code>. Seu Dashboard com gráfico 1.847 leads não foi alterado.</p>
           </div>
           <div className="w-full lg:w-[380px] shrink-0 bg-white text-slate-900 rounded-2xl p-4">
             <div className="text-xs font-bold">Número de teste (seu WhatsApp)</div>
@@ -56,10 +56,14 @@ export function PrimeiroDisparo() {
         </div>
       </div>
 
+      <div className="rounded-xl bg-amber-50 border border-amber-200 px-4 py-3 text-xs leading-relaxed">
+        <b>⚠️ Este é só o modo TESTE:</b> os 8 “leads” abaixo são cópias idênticas pro seu zap <code className="bg-white px-1 rounded font-mono">+55 62 99902-3474</code> só pra você validar as 8 mensagens (1 por prédio). <b>Não apaga seu CRM</b> — seus <b>1.847 leads reais com números distintos e gráfico</b> continuam intactos em <b>Dashboard</b> e <b>Leads & CRM</b>. Quando for disparar de verdade, a API puxa números distintos (Apify/Scout).
+      </div>
+
       {/* Checklist 8 prédios */}
       <Card>
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm flex items-center gap-2"><Sparkles className="h-4 w-4 text-green-600" /> 8 prédios no disparo (1 lead cada)</CardTitle>
+          <CardTitle className="text-sm flex items-center gap-2"><Sparkles className="h-4 w-4 text-green-600" /> 8 prédios no disparo (1 lead de TESTE cada → tudo vai pro seu zap)</CardTitle>
         </CardHeader>
         <CardContent className="grid md:grid-cols-4 gap-2">
           {MRV_EMPREENDIMENTOS.map((e) => (
@@ -113,7 +117,7 @@ export function PrimeiroDisparo() {
                 <div className="grid md:grid-cols-2 gap-3 mt-2">
                   {result.leads.slice(0,2).map((l:any) => (
                     <div key={l.nome+l.predio} className="bg-white border rounded-xl p-3">
-                      <div className="text-xs font-bold">{l.predio} → {l.nome} ({l.telefone})</div>
+                      <div className="text-xs font-bold">{l.predio} → {l.nome} ({l.telefone}) <span className="text-[10px] bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded-full">TESTE → seu zap</span></div>
                       <div className="text-xs text-slate-600 mt-1 leading-relaxed bg-green-50 border border-green-200 p-2 rounded-lg">{l.mensagem}</div>
                       <div className="text-[11px] text-slate-400 mt-1">Entrega {l.entrega} • SheetRow: {l.sheetRow.slice(0,5).join(" | ")}...</div>
                     </div>
