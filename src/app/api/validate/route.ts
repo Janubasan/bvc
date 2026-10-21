@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { validarLote, ESTRATEGIAS_VALIDADAS, CHECKLIST_LEAD_QUENTE } from "@/lib/validation";
+import { LISTAS_MODELO, getListaRows } from "@/lib/listas-validadas";
 
 export async function POST(req: Request) {
   const body = await req.json().catch(()=> ({}));
@@ -15,7 +16,7 @@ export async function POST(req: Request) {
   const csvBody = validados.map(r=> `"${r.nacional}","${r.e164}","${r.ddd}","${r.operadora}",${r.scoreQuente},"${r.whatsappProbable ? 'SIM' : 'NAO'}"`).join("\n");
   const csvCompleto = header + "\n" + csvBody;
 
-  // Listas separadas para copiar fácil
+  // Listas separadas para copiar fácil — uma por linha
   const listaE164 = validados.map(r=> r.e164).join("\n");
   const listaNacional = validados.map(r=> r.nacional).join("\n");
   const listaWhatsApp = validados.filter(r=>r.whatsappProbable).map(r=> r.e164?.replace("+","")).join("\n");
@@ -42,12 +43,35 @@ export async function POST(req: Request) {
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const template = searchParams.get("template");
+  const listaId = searchParams.get("lista");
+  const formato = searchParams.get("formato") || searchParams.get("format") || "csv";
 
   if (template === "csv") {
     const header = "Nome,Telefone_Nacional,Telefone_E164,Predio_MRV,Score_Quente,Origem_OptIn\n";
     const exemplo = `"João Silva","(62) 9XXXX-XXXX","+55629XXXXXXX","GRAN PORTO",85,"Meta OTP - substitua por seus leads reais"\n`;
     const body = header + exemplo + `"Maria Souza","(62) 9XXXX-XXXX","+55629XXXXXXX","GRAN SAFIRA",78,"QR Plantão - substitua"\n`;
-    return new NextResponse(body, { headers: { "Content-Type":"text/csv; charset=utf-8", "Content-Disposition": `attachment; filename=template-validador-BVC-62.csv` }});
+    return new NextResponse("\uFEFF" + body, { headers: { "Content-Type":"text/csv; charset=utf-8", "Content-Disposition": `attachment; filename=template-validador-BVC-62.csv` }});
+  }
+
+  if (listaId) {
+    const rows = getListaRows(listaId);
+    const meta = LISTAS_MODELO.find(l=>l.id===listaId);
+    if (!rows || !meta) {
+      return NextResponse.json({ ok:false, error:"Lista não encontrada", disponiveis: LISTAS_MODELO.map(l=>({id:l.id, nome:l.nome, arquivo:l.arquivo, download:l.download})) }, {status:404});
+    }
+    if (formato === "txt" || formato === "e164") {
+      const txt = rows.map(r=> r.Telefone_E164).join("\n");
+      return new NextResponse(txt, { headers: { "Content-Type":"text/plain; charset=utf-8", "Content-Disposition": `attachment; filename="${meta.arquivo.replace('.csv','.txt')}"` }});
+    }
+    if (formato === "nacional") {
+      const txt = rows.map(r=> r.Telefone_Nacional).join("\n");
+      return new NextResponse(txt, { headers: { "Content-Type":"text/plain; charset=utf-8", "Content-Disposition": `attachment; filename="${meta.arquivo.replace('.csv','-nacional.txt')}"` }});
+    }
+    // padrão CSV demo
+    const header = Object.keys(rows[0]!).join(",");
+    const body = rows.map(r=> Object.values(r).map(v=> `"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+    const csv = "\uFEFF" + header + "\n" + body;
+    return new NextResponse(csv, { headers: { "Content-Type":"text/csv; charset=utf-8", "Content-Disposition": `attachment; filename="${meta.arquivo}"` }});
   }
 
   return NextResponse.json({
@@ -57,10 +81,13 @@ export async function GET(req: Request) {
     uso: { 
       validar: "POST /api/validate { numeros: ['629999023474', '(62) 99902-3474'] }", 
       template: "GET /api/validate?template=csv — baixa modelo vazio para preencher",
-      copiaECola: "Cole 1 número por linha no Validador 62 > Validar > Copiar E164 / Baixar CSV" 
+      listasDemo: "GET /api/validate?lista=gran-porto-quentes — baixa CSV demo DDD62 (DEMO sintético)",
+      listasTxt: "GET /api/validate?lista=gran-porto-quentes&formato=txt — TXT E164 1 por linha",
+      copiaECola: "Cole 1 número por linha no Validador 62 > Validar > Copiar E164 / Baixar CSV/TXT" 
     },
+    listasModelo: LISTAS_MODELO.map(l=> ({ id:l.id, nome:l.nome, cidade:l.cidade, validados:l.validados, taxaValido:l.taxaValido, arquivo:l.arquivo, download:l.download, downloadTxt: l.download + "&formato=txt" })),
     checklist: CHECKLIST_LEAD_QUENTE,
     estrategias: ESTRATEGIAS_VALIDADAS,
-    importante: "Não fornecemos números reais. Validador só processa sua base com opt-in (LGPD). Use Meta Lead Ads + OTP ou QR plantão para captar.",
+    importante: "Listas modelo são DEMO sintéticas DDD62 (não são pessoas reais). Validador só processa sua base com opt-in (LGPD). Use Meta Lead Ads + OTP ou QR plantão para captar números reais.",
   });
 }
