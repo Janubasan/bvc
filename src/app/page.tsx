@@ -15,6 +15,7 @@ import { Integracoes } from "@/components/Integracoes";
 import { Exportador } from "@/components/Exportador";
 import { PrimeiroDisparo } from "@/components/PrimeiroDisparo";
 import { Validador } from "@/components/Validador";
+import { B2CCandidatos } from "@/components/B2CCandidatos";
 import { useStore } from "@/lib/store";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
@@ -26,6 +27,7 @@ export default function Page() {
 
   const render = () => {
     switch (activeTab) {
+      case "b2c": return <B2CCandidatos />;
       case "dashboard": return <Dashboard />;
       case "validador": return <Validador />;
       case "disparo": return <PrimeiroDisparo />;

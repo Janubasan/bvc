@@ -19,9 +19,11 @@ import {
   FileSpreadsheet,
   Rocket,
   BadgeCheck,
+  Users2,
 } from "lucide-react";
 
 const NAV = [
+  { id: "b2c", label: "Candidatos MCMV B2C", icon: Users2, badge: "3K–10K" },
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard, badge: null },
   { id: "validador", label: "Validador 62", icon: BadgeCheck, badge: "6 MOTORES" },
   { id: "disparo", label: "Primeiro Disparo", icon: Rocket, badge: "AO VIVO" },

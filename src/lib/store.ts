@@ -19,7 +19,7 @@ type Store = {
 export const useStore = create<Store>((set) => ({
   leads: LEADS_MOCK,
   selectedLead: null,
-  activeTab: "dashboard",
+  activeTab: "b2c",
   prospectingRunning: false,
   workflowRunning: true,
   setActiveTab: (activeTab) => set({ activeTab }),

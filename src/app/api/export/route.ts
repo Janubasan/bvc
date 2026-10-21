@@ -1,17 +1,14 @@
 import { NextResponse } from "next/server";
 import { LEADS_MOCK } from "@/lib/data";
 import { MRV_EMPREENDIMENTOS } from "@/lib/data-mrv";
-import { buildMRVMatrix, generateXLSX, generateCSV } from "@/lib/exporter";
+import { buildMRVMatrix, generateXLSX, generateCSV, generateTXT, generateTXTWhatsapp, generateB2CCSV, generateB2CTXT } from "@/lib/exporter";
 
-// POST { target: "googleSheets"|"xlsx"|"csv"|"all", spreadsheetId?, predios?: ["all"]|["Gran Porto"], leads?: Lead[] }
-// GET ?target=xlsx retorna exemplo
+// POST { target: "googleSheets"|"xlsx"|"csv"|"txt"|"b2c-csv"|"b2c-txt"|"all", spreadsheetId?, predios?: ["all"]|["Gran Porto"], leads?: Lead[], b2cLeads?: any[] }
 export async function POST(req: Request) {
   const body = await req.json().catch(() => ({}));
-  const { target = "xlsx", spreadsheetId, predios = ["all"], leads = LEADS_MOCK } = body;
+  const { target = "xlsx", spreadsheetId, predios = ["all"], leads = LEADS_MOCK, b2cLeads } = body;
 
-  // XLSX / CSV são sempre possíveis (exceljs)
   if (target === "xlsx" || target === "all") {
-    // Para 'all', não retorna binary aqui — instrui usar /api/export/xlsx
     if (target === "xlsx") {
       try {
         const buffer = await generateXLSX(leads, predios);
@@ -38,11 +35,51 @@ export async function POST(req: Request) {
     });
   }
 
+  if (target === "txt") {
+    const txt = generateTXT(leads);
+    return new NextResponse(txt as any, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Disposition": `attachment; filename="BVC-MRV-${new Date().toISOString().slice(0,10)}.txt"`,
+      },
+    });
+  }
+
+  if (target === "txt-whatsapp") {
+    const txt = generateTXTWhatsapp(leads);
+    return new NextResponse(txt as any, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Disposition": `attachment; filename="BVC-MRV-whatsapp-${new Date().toISOString().slice(0,10)}.txt"`,
+      },
+    });
+  }
+
+  if (target === "b2c-csv") {
+    const csv = generateB2CCSV(b2cLeads || []);
+    if (!csv || (b2cLeads||[]).length===0) return NextResponse.json({ ok:false, error:"Sem b2cLeads para exportar"},{status:400});
+    return new NextResponse(csv as any, {
+      headers: {
+        "Content-Type": "text/csv; charset=utf-8",
+        "Content-Disposition": `attachment; filename="AvantoFind_MCMV_B2C_${new Date().toISOString().slice(0,10)}.csv"`,
+      },
+    });
+  }
+
+  if (target === "b2c-txt") {
+    const txt = generateB2CTXT(b2cLeads || []);
+    if (!txt) return NextResponse.json({ ok:false, error:"Sem b2cLeads"},{status:400});
+    return new NextResponse(txt as any, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Content-Disposition": `attachment; filename="AvantoFind_MCMV_B2C_${new Date().toISOString().slice(0,10)}.txt"`,
+      },
+    });
+  }
+
   if (target === "googleSheets" || target === "all") {
     const matrices = buildMRVMatrix(leads);
     const id = spreadsheetId || process.env.GOOGLE_SHEETS_SPREADSHEET_ID || "";
-
-    // Sem credenciais → retorna preview + instruções
     const hasCreds = !!(process.env.GOOGLE_SHEETS_CLIENT_EMAIL && process.env.GOOGLE_SHEETS_PRIVATE_KEY);
     if (!hasCreds || !id) {
       const preview = Object.entries(matrices).slice(0, 3).map(([name, rows]) => ({
@@ -62,23 +99,10 @@ export async function POST(req: Request) {
           "2. Copie ID da URL: .../spreadsheets/d/ID/edit",
           "3. Compartilhe com service account email (Editor)",
           "4. POST /api/export { target:'googleSheets', spreadsheetId:'ID', predios:['all'] } → escreve 8 abas + Consolidado em batch",
-          "5. Alternativa: use /src/lib/gsheeter.ts → sheet.matrix = data; await sheet.save()",
         ],
-        gsheeterExample: `
-import gsheeter from "@/lib/gsheeter";
-const gs = await gsheeter.authServiceAccount();
-const ss = await gs.getSpreadsheet("ID_DA_PLANILHA");
-await ss.ensureSheets(["Gran Safira","Gran Essence","Gran Parma","Gran Terrazo","Priville","Gran Aurora","Gran Porto","Vert Parque Amazônia","Consolidado"]);
-for (const emp of MRV_EMPREENDIMENTOS) {
-  const sheet = ss.getSheet(emp.nomeCurto);
-  sheet.matrix = matrices[emp.nome]; // header + rows
-  await sheet.save({ headerColor: "#16a34a" });
-}
-        `.trim(),
+        gsheeterExample: `import gsheeter from "@/lib/gsheeter"; const gs = await gsheeter.authServiceAccount(); const ss = await gs.getSpreadsheet("ID_DA_PLANILHA"); await ss.ensureSheets(["Gran Safira","Gran Essence","Gran Parma","Gran Terrazo","Priville","Gran Aurora","Gran Porto","Vert Parque Amazônia","Consolidado"]);`.trim(),
       });
     }
-
-    // Real: usa gsheeter-like batch
     try {
       const { GSheet } = await import("@/lib/gsheeter");
       const gs = await GSheet.authServiceAccount();
@@ -91,50 +115,45 @@ for (const emp of MRV_EMPREENDIMENTOS) {
         if (!matrix) continue;
         const sheet = ss.getSheet(title);
         sheet.matrix = matrix;
-        await sheet.save({ headerColor: "#16a34a", freezeRow: true, autoFilter: true });
+        await sheet.save({ headerColor: "#0A7D5A", freezeRow: true, autoFilter: true });
       }
-      return NextResponse.json({
-        ok: true,
-        mode: "real",
-        spreadsheetId: id,
-        sheetsWritten: titles.length,
-        url: `https://docs.google.com/spreadsheets/d/${id}/edit`,
-        message: `${titles.length} abas escritas com sucesso`,
-      });
+      return NextResponse.json({ ok: true, mode: "real", spreadsheetId: id, sheetsWritten: titles.length, url: `https://docs.google.com/spreadsheets/d/${id}/edit`, message: `${titles.length} abas escritas` });
     } catch (e: any) {
       return NextResponse.json({ ok: false, mode: "real", error: e.message }, { status: 500 });
     }
   }
 
-  return NextResponse.json({ ok: false, error: "target inválido: use googleSheets | xlsx | csv | all" }, { status: 400 });
+  return NextResponse.json({ ok: false, error: "target inválido: use googleSheets | xlsx | csv | txt | b2c-csv | b2c-txt | all" }, { status: 400 });
 }
 
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const target = url.searchParams.get("target") || "info";
   if (target === "xlsx") {
-    // stream xlsx direto
     const buf = await generateXLSX(LEADS_MOCK, ["all"]);
     return new NextResponse(buf as any, {
-      headers: {
-        "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        "Content-Disposition": `attachment; filename="BVC-MRV-${new Date().toISOString().slice(0,10)}.xlsx"`,
-      },
+      headers: { "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Content-Disposition": `attachment; filename="BVC-MRV-${new Date().toISOString().slice(0,10)}.xlsx"` },
     });
   }
   if (target === "csv") {
     const csv = generateCSV(LEADS_MOCK);
-    return new NextResponse(csv as any, { headers: { "Content-Type": "text/csv" } });
+    return new NextResponse(csv as any, { headers: { "Content-Type": "text/csv; charset=utf-8", "Content-Disposition": `attachment; filename="BVC-MRV-${new Date().toISOString().slice(0,10)}.csv"` } });
+  }
+  if (target === "txt") {
+    const txt = generateTXT(LEADS_MOCK);
+    return new NextResponse(txt as any, { headers: { "Content-Type": "text/plain; charset=utf-8", "Content-Disposition": `attachment; filename="BVC-MRV-${new Date().toISOString().slice(0,10)}.txt"` } });
   }
   return NextResponse.json({
-    status: "Exportador BVC MRV • 8 prédios",
+    status: "Exportador BVC MRV • 8 prédios • B2C 3k-10k",
     endpoints: [
       "POST /api/export { target:'googleSheets', spreadsheetId, predios:['all'] } → 8 abas MRV",
-      "POST /api/export { target:'xlsx', predios:['Gran Porto'] } → binary XLSX",
-      "GET /api/export?target=xlsx → download direto",
-      "POST /api/export { target:'csv' } → csv",
+      "POST /api/export { target:'xlsx', predios:['Gran Porto'] } → XLSX",
+      "GET /api/export?target=xlsx → download XLSX",
+      "POST /api/export { target:'csv' } → CSV com BOM",
+      "POST /api/export { target:'txt' } → TXT tab-separated",
+      "POST /api/export { target:'b2c-csv', b2cLeads: [...] } → CSV B2C 3k-10k",
+      "POST /api/export { target:'b2c-txt', b2cLeads: [...] } → TXT B2C",
     ],
     wrapper: "src/lib/gsheeter.ts → GSheet.authServiceAccount() → ss.getSheet(name).matrix = rows; await save()",
-    pythonFallback: "python/gsheeter_export.py (gsheeter) + python/opensheet_export.py (opensheet-core Rust)",
   });
 }
